@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --radius: 0.5rem
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply font-mono uppercase text-center font-bold text-lg md:text-2xl bg-gradient-to-r from-orange-600 to-blue-400 bg-clip-text text-transparent my-5;
+  }
+}

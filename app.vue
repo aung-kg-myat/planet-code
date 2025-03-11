@@ -4,8 +4,7 @@
   <Navbar />
   <HeroSection />
   <About />
+  <Services />
 </template>
 
-<script setup lang="ts">
-// import AuroraBackground from "/components/ui/aurora-background/AuroraBackground.vue";
-</script>
+<script setup lang="ts"></script>

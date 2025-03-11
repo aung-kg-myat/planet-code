@@ -44,12 +44,12 @@ onMounted(() => {
           >
             <div class="flex items-center justify-center md:gap-8 gap-4 mb-7">
               <div class="flex items-center justify-center">
-                <SparklesText
-                  text="Space Lab"
-                  :colors="{ first: '#fff', second: '#FE8BBB' }"
-                  :sparkles-count="15"
-                  class="md:text-7xl text-4xl font-bold"
-                />
+                <RadiantText
+                  class="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400"
+                  :duration="4"
+                >
+                  <span class="md:text-5xl text-3xl font-bold">Space Lab</span>
+                </RadiantText>
               </div>
               <img src="/images/rocket.png" alt="logo" class="w-14 h-14" />
             </div>
@@ -78,13 +78,13 @@ onMounted(() => {
           </div>
         </div>
       </ClientOnly>
-      <ClientOnly>
+      <!-- <ClientOnly>
         <Tetris
           class="h-[500px] w-full [mask-image:radial-gradient(450px_circle_at_center,#00C16A,transparent)]"
           :base="15"
           square-color="#FB923C"
         />
-      </ClientOnly>
+      </ClientOnly> -->
     </div>
   </Motion>
 </template>

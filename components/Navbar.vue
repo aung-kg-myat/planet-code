@@ -6,7 +6,7 @@ const isMenuOpen = ref(false);
 const links = [
   { label: "Home", to: "#home" },
   { label: "About", to: "#about" },
-  { label: "Contact", to: "#contact" },
+  { label: "Services", to: "#services" },
 ];
 
 const route = useRoute();
@@ -15,7 +15,7 @@ const isActive = (path: string) => route.hash === path;
 
 <template>
   <header
-    class="bg-white dark:bg-[#161717]/50 shadow-sm sticky top-0 backdrop-blur-lg z-50"
+    class="bg-white dark:bg-[#161717]/50 shadow-sm sticky top-0 backdrop-blur-lg z-50 font-mono"
   >
     <UContainer class="flex items-center justify-between py-3">
       <!-- Logo -->

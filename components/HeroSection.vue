@@ -74,7 +74,7 @@
             class="w-full md:h-[800px] h-[500px]"
           />
           <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:p-36 w-full text-center"
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:p-36 text-center w-full"
           >
             <div
               class="flex flex-col items-center justify-start space-y-8 md:space-y-14"
@@ -98,35 +98,22 @@
               </h1>
 
               <div
-                class="flex w-full flex-col items-center justify-center overflow-hidden rounded-md mt-8"
+                class="flex w-full flex-col items-center justify-center overflow-hidden rounded-md mt-8 gap-5"
               >
                 <div class="flex items-center justify-center">
                   <SparklesText
                     text="Space Lab"
                     :colors="{ first: '#fff', second: '#FE8BBB' }"
-                    :sparkles-count="15"
+                    :sparkles-count="8"
                     class="md:text-7xl text-4xl font-bold text-orange-400"
                   />
                 </div>
-                <div class="relative md:h-15 md:w-[30rem] h-10 w-[25rem]">
-                  <div
-                    class="absolute inset-x-20 top-0 h-[2px] w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm"
-                  />
-                  <div
-                    class="absolute inset-x-20 top-0 h-px w-3/4 bg-gradient-to-r from-transparent via-indigo-500 to-transparent"
-                  />
-                  <div
-                    class="absolute inset-x-60 top-0 h-[5px] w-1/4 bg-gradient-to-r from-transparent via-sky-500 to-transparent blur-sm"
-                  />
-                  <div
-                    class="absolute inset-x-60 top-0 h-px w-1/4 bg-gradient-to-r from-transparent via-sky-500 to-transparent"
-                  />
-
+                <div class="relative md:h-40 w-full h-24">
                   <Sparkles
                     background="transparent"
                     :min-size="0.4"
-                    :max-size="0.9"
-                    :particle-density="1200"
+                    :max-size="1.9"
+                    :particle-density="500"
                     class="size-full"
                     :particle-color="particlesColor"
                   />
@@ -135,13 +122,14 @@
                 </div>
               </div>
 
-              <p
-                class="text-center font-mono text-gray-400 lg:text-lg text-md text-balance"
+              <div
+                class="flex h-40 items-center justify-center max-lg:w-full min-md:flex-1 text-gray-400 lg:text-lg text-md text-balance font-mono"
               >
-                Empowering businesses with innovative software solutions,
-                cutting-edge technology, and strategic expertise to drive growth
-                and success. 🚀
-              </p>
+                <TextGenerateEffect
+                  words="Empowering businesses with innovative software solutions, cutting-edge technology, and strategic expertise to drive growth and success. 🚀"
+                  class="''"
+                />
+              </div>
             </div>
           </div>
         </div>

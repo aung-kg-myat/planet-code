@@ -32,7 +32,7 @@
       <div
         :class="
           cn(
-            'absolute h-full w-full rounded-2xl bg-black/70 p-4 text-slate-200 [backface-visibility:hidden]',
+            'absolute h-full w-full rounded-2xl bg-black p-4 text-slate-200 [backface-visibility:hidden]',
             rotation[1]
           )
         "

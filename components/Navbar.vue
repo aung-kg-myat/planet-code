@@ -5,8 +5,8 @@ const isMenuOpen = ref(false);
 
 const links = [
   { label: "Home", to: "#home" },
-  { label: "About", to: "#about" },
   { label: "Services", to: "#services" },
+  { label: "About", to: "#about" },
 ];
 
 const route = useRoute();

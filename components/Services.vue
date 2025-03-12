@@ -9,37 +9,29 @@
       filter: 'blur(0px)',
     }"
     :transition="{
-      delay: 0.5,
+      delay: 0.3,
       duration: 0.8,
       ease: 'easeInOut',
     }"
-    class="relative"
+    class="relative my-8"
   >
     <div
       id="services"
       class="relative flex w-full flex-col items-center justify-center overflow-hidden md:shadow-xl"
     >
-      <!-- <div class="flex items-center justify-center w-full">
-      <RadiantText
-        class="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400"
-        :duration="4"
-      >
-        <span class="md:text-7xl text-4xl font-bold">Our Services</span>
-      </RadiantText>
-    </div> -->
       <div class="flex items-center justify-center">
         <SparklesText
           text="Our Services"
           :colors="{ first: '#fff', second: '#FE8BBB' }"
-          :sparkles-count="8"
+          :sparkles-count="5"
           class="md:text-5xl text-3xl font-bold text-orange-400"
         />
       </div>
 
       <div
-        class="my-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 items-center justify-center gap-5 z-30"
+        class="my-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 items-center justify-center gap-5 z-30 max-w-7xl mx-4"
       >
-        <FlipCard
+        <!-- <FlipCard
           v-for="service in services"
           :key="service.title"
           :description="service.description"
@@ -48,16 +40,49 @@
           :subtitle="service.title"
           :title="service.title"
           :icon-class="service.iconClass"
-        />
+        /> -->
+        <div
+          class="relative w-full h-[230px]"
+          v-for="service in services"
+          :key="service.title"
+        >
+          <div
+            class="absolute inset-0 size-full scale-[0.70] rounded-full bg-red-500 bg-gradient-to-r from-orange-400 to-teal-200 blur-3xl"
+          />
+          <div
+            class="relative flex h-full flex-col items-start justify-start overflow-hidden rounded-2xl border border-gray-800 bg-gray-900/80 px-4 py-8 shadow-xl gap-6"
+          >
+            <div class="flex items-start justify-start gap-5">
+              <UIcon :name="service.iconClass" class="w-6 h-6 text-white" />
+
+              <h1 class="relative z-50 text-xl font-bold text-orange-400">
+                {{ service.title }}
+              </h1>
+            </div>
+
+            <p
+              class="relative z-50 mb-4 font-mono text-balance text-sm font-normal text-slate-300"
+            >
+              {{ service.description }}
+            </p>
+
+            <!-- <button
+              class="rounded-lg border border-gray-500 px-4 py-1 text-gray-300"
+            >
+              Explore
+            </button> -->
+            <Meteors />
+          </div>
+        </div>
       </div>
-      <ParticlesBg
+      <!-- <ParticlesBg
         class="absolute inset-0 z-10"
         :quantity="300"
         :ease="100"
         :color="'#FB923C'"
         :staticity="10"
         refresh
-      />
+      /> -->
     </div>
   </Motion>
 </template>

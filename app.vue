@@ -3,8 +3,9 @@
 <template>
   <Navbar />
   <HeroSection />
-  <About />
   <Services />
+  <About />
+  <Team />
 </template>
 
 <script setup lang="ts"></script>

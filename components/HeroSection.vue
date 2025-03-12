@@ -71,7 +71,7 @@
           <img
             src="/images/bg.jpg"
             alt="hero-background"
-            class="w-full md:h-[800px] h-[500px]"
+            class="w-full h-screen"
           />
           <div
             class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:p-36 text-center w-full"

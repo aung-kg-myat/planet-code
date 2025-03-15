@@ -27,7 +27,14 @@
       <div class="flex items-center justify-center my-10 gap-4">
         <div>
           <GlareCard class="flex flex-col items-center justify-center relative">
-            <img src="/team/akm.jpg" class="w-[100%] h-[100%] z-10" />
+            <nuxt-img
+              src="/team/akm.jpg"
+              format="webp"
+              :srcset="`team/akm.jpg 480w, team/akm.jpg 800w`"
+              sizes="(max-width: 600px) 480px, 800px"
+              alt="team-member"
+              class="w-full h-full z-10"
+            />
             <div class="z-20 absolute bottom-[0.7rem] bg-black/60 w-full">
               <h1 class="mt-2 text-lg font-bold text-white text-center">
                 Mr Aung Kaung Myat

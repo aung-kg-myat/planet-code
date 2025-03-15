@@ -20,7 +20,14 @@ const isActive = (path: string) => route.hash === path;
     <UContainer class="flex items-center justify-between py-3">
       <!-- Logo -->
       <NuxtLink to="/" class="text-xl font-bold text-orange-400">
-        <img src="/images/rocket.png" alt="logo" class="w-10 h-10" />
+        <nuxt-img
+          src="/images/rocket.png"
+          format="webp"
+          :srcset="`images/rocket.png 480w, images/rocket.png 800w`"
+          sizes="(max-width: 600px) 480px, 800px"
+          alt="logo"
+          class="w-10 h-10"
+        />
         <!-- Space <span class="text-white">Lab</span> -->
       </NuxtLink>
 

@@ -68,8 +68,11 @@
         class="relative"
       >
         <div class="relative">
-          <img
+          <nuxt-img
             src="/images/bg.jpg"
+            format="webp"
+            :srcset="`/images/bg.jpg 480w, /images/bg.jpg 800w`"
+            sizes="(max-width: 600px) 480px, 800px"
             alt="hero-background"
             class="w-full h-screen"
           />

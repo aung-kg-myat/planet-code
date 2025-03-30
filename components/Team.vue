@@ -31,7 +31,7 @@
           </div>
         </GlareCard>
         <div
-          class="flex items-center justify-center gap-2 bg-white rounded-b-[10px]"
+          class="flex items-center justify-center gap-2 bg-black/90 dark:bg-white rounded-b-[10px]"
         >
           <nuxt-link
             to="https://www.linkedin.com/in/aung-kaung-myat-a82700222/"

@@ -1,7 +1,7 @@
 <template>
   <div
     id="services"
-    class="relative flex w-full flex-col items-center justify-center overflow-hidden md:shadow-xl py-28"
+    class="relative flex w-full flex-col items-center justify-center overflow-hidden md:shadow-xl py-28 dark:bg-[#161717]/50 bg:white/50"
   >
     <div class="flex items-center justify-center" data-aos="fade-down">
       <SparklesText
@@ -15,16 +15,6 @@
     <div
       class="my-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 items-center justify-center gap-5 z-30 max-w-7xl mx-4"
     >
-      <!-- <FlipCard
-          v-for="service in services"
-          :key="service.title"
-          :description="service.description"
-          :image="service.image"
-          rotate="y"
-          :subtitle="service.title"
-          :title="service.title"
-          :icon-class="service.iconClass"
-        /> -->
       <div
         class="relative w-full md:h-[200px] h-[180px]"
         v-for="service in services"
@@ -57,14 +47,6 @@
         </div>
       </div>
     </div>
-    <!-- <ParticlesBg
-        class="absolute inset-0 z-10"
-        :quantity="300"
-        :ease="100"
-        :color="'#FB923C'"
-        :staticity="10"
-        refresh
-      /> -->
   </div>
 </template>
 <script setup lang="ts">

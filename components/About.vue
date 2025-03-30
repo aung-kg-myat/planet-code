@@ -3,13 +3,22 @@ import FlikeringGrid from "./FlikeringGrid.vue";
 </script>
 
 <template>
-  <div id="about" class="max-w-7xl mx-auto">
+  <div id="about" class="w-full">
     <ClientOnly>
       <div
-        class="relative size-[100%] w-full overflow-hidden bg-background"
+        class="relative h-[700px] w-full overflow-hidden bg-background"
         data-aos="fade-down"
       >
-        <FlikeringGrid
+        <nuxt-img
+          src="/images/freepic.jpg"
+          format="webp"
+          :srcset="`/images/freepic.jpg 480w, /images/freepic.jpg 800w`"
+          sizes="(max-width: 600px) 480px, 800px"
+          alt="hero-background"
+          class="w-full h-screen"
+        />
+
+        <!-- <FlikeringGrid
           class="relative inset-0 z-0 [mask-image:radial-gradient(450px_circle_at_center,white,transparent)]"
           :square-size="4"
           :grid-gap="6"
@@ -18,7 +27,7 @@ import FlikeringGrid from "./FlikeringGrid.vue";
           :flicker-chance="0.1"
           :width="1400"
           :height="700"
-        />
+        /> -->
         <div
           class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full"
         >
@@ -33,11 +42,11 @@ import FlikeringGrid from "./FlikeringGrid.vue";
             </div>
             <img src="/images/rocket.png" alt="logo" class="w-14 h-14" />
           </div>
-          <h1 class="text-center font-bold section-title">
+          <h1 class="text-center font-bold section-title px-8">
             Your Trusted Partner in Software Development
           </h1>
           <p
-            class="font-light font-mono text-justify lg:text-lg text-sm px-3 text-gray-400"
+            class="font-light font-mono text-justify lg:text-lg text-sm px-8 text-gray-400 max-w-7xl mx-auto"
           >
             At Space Lab, we are your go-to partner for cutting-edge software
             development, specializing in crafting innovative solutions for web,
@@ -58,12 +67,5 @@ import FlikeringGrid from "./FlikeringGrid.vue";
         </div>
       </div>
     </ClientOnly>
-    <!-- <ClientOnly>
-        <Tetris
-          class="h-[500px] w-full [mask-image:radial-gradient(450px_circle_at_center,#00C16A,transparent)]"
-          :base="15"
-          square-color="#FB923C"
-        />
-      </ClientOnly> -->
   </div>
 </template>

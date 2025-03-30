@@ -1,7 +1,7 @@
 <template>
   <div
     id="services"
-    class="relative flex w-full flex-col items-center justify-center overflow-hidden md:shadow-xl py-28 dark:bg-[#161717]/50 bg:white/50"
+    class="relative flex w-full flex-col items-center justify-center overflow-hidden md:shadow-xl py-28 bg-black"
   >
     <div class="flex items-center justify-center" data-aos="fade-down">
       <SparklesText
@@ -22,12 +22,13 @@
       >
         <div
           data-aos="fade-down"
-          class="absolute inset-0 size-full scale-[0.70] rounded-full bg-red-500 bg-gradient-to-r from-orange-400 to-teal-200 blur-3xl"
+          class="absolute inset-0 size-full scale-[0.70] rounded-full bg-gradient-to-r from-blue-700 to-orange-900 blur-xl"
         />
         <div
           class="relative flex h-full flex-col items-start justify-start overflow-hidden rounded-2xl border border-gray-800 bg-gray-900/80 px-4 py-8 shadow-xl gap-6"
+          data-aos="fade-down"
         >
-          <div data-aos="fade-down">
+          <div>
             <div class="flex items-start justify-start gap-5 mb-5">
               <UIcon :name="service.iconClass" class="w-6 h-6 text-white" />
 

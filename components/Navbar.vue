@@ -15,7 +15,7 @@ const isActive = (path: string) => route.hash === path;
 
 <template>
   <header
-    class="bg-white/50 dark:bg-[#161717]/50 shadow-sm sticky top-0 backdrop-blur-lg z-50 font-mono"
+    class="bg-[#161717]/40 shadow-sm sticky top-0 backdrop-blur-lg z-50 font-mono"
   >
     <UContainer class="flex items-center justify-between py-3">
       <!-- Logo -->

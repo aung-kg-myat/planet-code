@@ -50,21 +50,18 @@
       </svg>
     </div>
     <div class="relative z-10">
-      <!-- <AuroraBackground> -->
       <div class="relative">
         <nuxt-img
-          src="/images/bg.jpg"
+          src="/images/freepic.jpg"
           format="webp"
-          :srcset="`/images/bg.jpg 480w, /images/bg.jpg 800w`"
+          :srcset="`/images/freepic.jpg 480w, /images/freepic.jpg 800w`"
           sizes="(max-width: 600px) 480px, 800px"
           alt="hero-background"
-          class="w-full h-screen"
+          class="absolute w-full h-screen"
         />
-        <div
-          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:p-36 text-center w-full"
-        >
+        <div class="lg:p-28 text-center w-full">
           <div
-            class="flex flex-col items-center justify-start space-y-8 md:space-y-14"
+            class="flex flex-col items-center justify-start space-y-1 md:space-y-14"
           >
             <h1
               class="text-center font-bold lg:text-5xl text-3xl text-white font-mono"
@@ -85,7 +82,7 @@
             </h1>
 
             <div
-              class="flex w-full flex-col items-center justify-center overflow-hidden rounded-md mt-8 gap-5"
+              class="flex w-full flex-col items-center justify-center overflow-hidden rounded-md gap-5"
             >
               <div class="flex items-center justify-center">
                 <SparklesText
@@ -95,7 +92,14 @@
                   class="md:text-7xl text-4xl font-bold text-orange-400"
                 />
               </div>
-              <div class="relative md:h-40 w-full h-24">
+              <client-only>
+                <Vue3Lottie
+                  animationLink="/lottie/laptop.json"
+                  :height="220"
+                  :width="220"
+                />
+              </client-only>
+              <!-- <div class="absolute md:h-40 w-full h-24">
                 <Sparkles
                   background="transparent"
                   :min-size="0.4"
@@ -106,11 +110,10 @@
                 />
 
                 <div class="absolute inset-0 size-full"></div>
-              </div>
+              </div> -->
             </div>
-
             <div
-              class="flex h-40 items-center justify-center max-lg:w-full min-md:flex-1 text-gray-400 lg:text-lg text-md text-balance font-mono"
+              class="flex items-center justify-center max-lg:w-full text-gray-400 lg:text-lg text-md text-balance font-mono"
             >
               <TextGenerateEffect
                 words="Empowering businesses with innovative software solutions, cutting-edge technology, and strategic expertise to drive growth and success. 🚀"
@@ -120,12 +123,13 @@
           </div>
         </div>
       </div>
-      <!-- </AuroraBackground> -->
+      <div ref="lottieContainer"></div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
 import { useColorMode } from "@vueuse/core";
+import { Vue3Lottie } from "vue3-lottie";
 
 const colorMode = useColorMode();
 const particlesColor = computed(() =>

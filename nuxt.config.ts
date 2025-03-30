@@ -9,5 +9,10 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["@nuxt/ui", "@nuxt/image"],
+  modules: ["@nuxt/ui", "@nuxt/image", "nuxt-aos"],
+  aos: {
+    duration: 900, // Global duration for all animations
+    easing: "ease",
+    once: false, // Set to true if you only want animations to run once
+  },
 });

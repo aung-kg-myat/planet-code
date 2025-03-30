@@ -5,7 +5,10 @@ import FlikeringGrid from "./FlikeringGrid.vue";
 <template>
   <div id="about" class="max-w-7xl mx-auto">
     <ClientOnly>
-      <div class="relative size-[100%] w-full overflow-hidden bg-background">
+      <div
+        class="relative size-[100%] w-full overflow-hidden bg-background"
+        data-aos="fade-down"
+      >
         <FlikeringGrid
           class="relative inset-0 z-0 [mask-image:radial-gradient(450px_circle_at_center,white,transparent)]"
           :square-size="4"

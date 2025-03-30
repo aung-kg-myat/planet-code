@@ -57,9 +57,11 @@
           :srcset="`/images/freepic.jpg 480w, /images/freepic.jpg 800w`"
           sizes="(max-width: 600px) 480px, 800px"
           alt="hero-background"
-          class="absolute w-full h-screen"
+          class="w-full h-screen"
         />
-        <div class="lg:p-28 text-center w-full">
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:p-36 text-center w-full"
+        >
           <div
             class="flex flex-col items-center justify-start space-y-1 md:space-y-14"
           >
@@ -113,7 +115,7 @@
               </div> -->
             </div>
             <div
-              class="flex items-center justify-center max-lg:w-full text-gray-400 lg:text-lg text-md text-balance font-mono"
+              class="flex items-center justify-center max-lg:w-full min-md:flex-1 text-gray-400 lg:text-lg text-md text-balance font-mono"
             >
               <TextGenerateEffect
                 words="Empowering businesses with innovative software solutions, cutting-edge technology, and strategic expertise to drive growth and success. 🚀"

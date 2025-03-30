@@ -51,108 +51,84 @@
     </div>
     <div class="relative z-10">
       <!-- <AuroraBackground> -->
-      <Motion
-        v-if="isReady"
-        as="div"
-        :initial="{ opacity: 0, y: 50, filter: 'blur(15px)' }"
-        :while-in-view="{
-          opacity: 1,
-          y: 0,
-          filter: 'blur(0px)',
-        }"
-        :transition="{
-          delay: 0.5,
-          duration: 0.8,
-          ease: 'easeInOut',
-        }"
-        class="relative"
-      >
-        <div class="relative">
-          <nuxt-img
-            src="/images/bg.jpg"
-            format="webp"
-            :srcset="`/images/bg.jpg 480w, /images/bg.jpg 800w`"
-            sizes="(max-width: 600px) 480px, 800px"
-            alt="hero-background"
-            class="w-full h-screen"
-          />
+      <div class="relative">
+        <nuxt-img
+          src="/images/bg.jpg"
+          format="webp"
+          :srcset="`/images/bg.jpg 480w, /images/bg.jpg 800w`"
+          sizes="(max-width: 600px) 480px, 800px"
+          alt="hero-background"
+          class="w-full h-screen"
+        />
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:p-36 text-center w-full"
+        >
           <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:p-36 text-center w-full"
+            class="flex flex-col items-center justify-start space-y-8 md:space-y-14"
           >
-            <div
-              class="flex flex-col items-center justify-start space-y-8 md:space-y-14"
+            <h1
+              class="text-center font-bold lg:text-5xl text-3xl text-white font-mono"
             >
-              <h1
-                class="text-center font-bold lg:text-5xl text-3xl text-white font-mono"
-              >
-                <Flipwords
-                  :words="[
-                    'Accelerate your growth with',
-                    'Revolutionize your business with',
-                    'Unlock new opportunities with',
-                    'Build a smarter future with',
-                    'Empower your brand with',
-                    'Stay ahead of the competition with',
-                    'Transform your digital presence with',
-                  ]"
-                  :duration="3000"
-                  class="text-center"
-                />
-              </h1>
+              <Flipwords
+                :words="[
+                  'Accelerate your growth with',
+                  'Revolutionize your business with',
+                  'Unlock new opportunities with',
+                  'Build a smarter future with',
+                  'Empower your brand with',
+                  'Stay ahead of the competition with',
+                  'Transform your digital presence with',
+                ]"
+                :duration="3000"
+                class="text-center"
+              />
+            </h1>
 
-              <div
-                class="flex w-full flex-col items-center justify-center overflow-hidden rounded-md mt-8 gap-5"
-              >
-                <div class="flex items-center justify-center">
-                  <SparklesText
-                    text="Space Lab"
-                    :colors="{ first: '#fff', second: '#FE8BBB' }"
-                    :sparkles-count="8"
-                    class="md:text-7xl text-4xl font-bold text-orange-400"
-                  />
-                </div>
-                <div class="relative md:h-40 w-full h-24">
-                  <Sparkles
-                    background="transparent"
-                    :min-size="0.4"
-                    :max-size="1.9"
-                    :particle-density="500"
-                    class="size-full"
-                    :particle-color="particlesColor"
-                  />
-
-                  <div class="absolute inset-0 size-full"></div>
-                </div>
-              </div>
-
-              <div
-                class="flex h-40 items-center justify-center max-lg:w-full min-md:flex-1 text-gray-400 lg:text-lg text-md text-balance font-mono"
-              >
-                <TextGenerateEffect
-                  words="Empowering businesses with innovative software solutions, cutting-edge technology, and strategic expertise to drive growth and success. 🚀"
-                  class="''"
+            <div
+              class="flex w-full flex-col items-center justify-center overflow-hidden rounded-md mt-8 gap-5"
+            >
+              <div class="flex items-center justify-center">
+                <SparklesText
+                  text="Space Lab"
+                  :colors="{ first: '#fff', second: '#FE8BBB' }"
+                  :sparkles-count="8"
+                  class="md:text-7xl text-4xl font-bold text-orange-400"
                 />
               </div>
+              <div class="relative md:h-40 w-full h-24">
+                <Sparkles
+                  background="transparent"
+                  :min-size="0.4"
+                  :max-size="1.9"
+                  :particle-density="500"
+                  class="size-full"
+                  :particle-color="particlesColor"
+                />
+
+                <div class="absolute inset-0 size-full"></div>
+              </div>
+            </div>
+
+            <div
+              class="flex h-40 items-center justify-center max-lg:w-full min-md:flex-1 text-gray-400 lg:text-lg text-md text-balance font-mono"
+            >
+              <TextGenerateEffect
+                words="Empowering businesses with innovative software solutions, cutting-edge technology, and strategic expertise to drive growth and success. 🚀"
+                class="''"
+              />
             </div>
           </div>
         </div>
-      </Motion>
+      </div>
       <!-- </AuroraBackground> -->
     </div>
   </div>
 </template>
 <script setup lang="ts">
 import { useColorMode } from "@vueuse/core";
-import { Motion } from "motion-v";
 
 const colorMode = useColorMode();
 const particlesColor = computed(() =>
   colorMode.value === "dark" ? "#FFFFFF" : "#000000"
 );
-
-const isReady = ref(false);
-
-onMounted(() => {
-  isReady.value = true;
-});
 </script>

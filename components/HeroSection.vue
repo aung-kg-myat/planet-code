@@ -82,38 +82,24 @@
                 class="text-center"
               />
             </h1>
-
             <div
               class="flex w-full flex-col items-center justify-center overflow-hidden rounded-md gap-5"
             >
               <div class="flex items-center justify-center">
-                <SparklesText
-                  text="Space Lab"
-                  :colors="{ first: '#fff', second: '#FE8BBB' }"
-                  :sparkles-count="8"
-                  class="md:text-7xl text-4xl font-bold text-orange-400"
-                />
+                <h1
+                  class="md:text-7xl text-4xl font-bold font-carterOne text-white"
+                >
+                  PLANET <span class="text-orange-400">CODE</span>
+                </h1>
               </div>
-              <client-only>
-                <Vue3Lottie
-                  animationLink="/lottie/laptop.json"
-                  :height="220"
-                  :width="220"
-                />
-              </client-only>
-              <!-- <div class="absolute md:h-40 w-full h-24">
-                <Sparkles
-                  background="transparent"
-                  :min-size="0.4"
-                  :max-size="1.9"
-                  :particle-density="500"
-                  class="size-full"
-                  :particle-color="particlesColor"
-                />
-
-                <div class="absolute inset-0 size-full"></div>
-              </div> -->
             </div>
+            <client-only>
+              <Vue3Lottie
+                animationLink="/lottie/laptop.json"
+                :height="220"
+                :width="220"
+              />
+            </client-only>
             <div
               class="flex items-center justify-center max-lg:w-full min-md:flex-1 text-gray-400 lg:text-lg text-md text-balance font-mono"
             >

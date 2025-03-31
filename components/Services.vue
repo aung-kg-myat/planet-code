@@ -3,7 +3,11 @@
     id="services"
     class="relative flex w-full flex-col items-center justify-center overflow-hidden md:shadow-xl py-28 bg-black"
   >
-    <div class="flex items-center justify-center" data-aos="fade-down">
+    <Gradient />
+    <div
+      class="flex items-center justify-center font-carterOne"
+      data-aos="fade-down"
+    >
       <SparklesText
         text="Our Services"
         :colors="{ first: '#fff', second: '#FE8BBB' }"
@@ -11,7 +15,6 @@
         class="md:text-5xl text-3xl font-bold text-orange-400"
       />
     </div>
-
     <div
       class="my-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 items-center justify-center gap-5 z-30 max-w-7xl mx-4"
     >
@@ -32,7 +35,9 @@
             <div class="flex items-start justify-start gap-5 mb-5">
               <UIcon :name="service.iconClass" class="w-6 h-6 text-white" />
 
-              <h1 class="relative z-50 text-xl font-bold text-orange-400">
+              <h1
+                class="relative z-50 text-xl font-bold text-orange-400 font-carterOne"
+              >
                 {{ service.title }}
               </h1>
             </div>
@@ -43,7 +48,6 @@
               {{ service.description }}
             </p>
           </div>
-
           <Meteors />
         </div>
       </div>

@@ -7,6 +7,7 @@ const links = [
   { label: "Home", to: "#home" },
   { label: "Services", to: "#services" },
   { label: "About", to: "#about" },
+  { label: "Testimonials", to: "#testimonials" },
 ];
 
 const route = useRoute();
@@ -15,18 +16,18 @@ const isActive = (path: string) => route.hash === path;
 
 <template>
   <header
-    class="bg-[#161717]/40 shadow-sm sticky top-0 backdrop-blur-lg z-50 font-mono"
+    class="bg-slate-900 shadow-sm sticky top-0 backdrop-blur-md z-50 font-mono py-1"
   >
-    <UContainer class="flex items-center justify-between py-3">
+    <UContainer class="flex items-center justify-between">
       <!-- Logo -->
       <NuxtLink to="/" class="text-xl font-bold text-orange-400">
         <nuxt-img
-          src="/images/rocket.png"
+          src="/logo/planet_code.png"
           format="webp"
-          :srcset="`images/rocket.png 480w, images/rocket.png 800w`"
+          :srcset="`logo/planet_code.png 480w, logo/planet_code.png 800w`"
           sizes="(max-width: 600px) 480px, 800px"
           alt="logo"
-          class="w-10 h-10"
+          class="w-14 h-14"
         />
         <!-- Space <span class="text-white">Lab</span> -->
       </NuxtLink>
@@ -38,7 +39,7 @@ const isActive = (path: string) => route.hash === path;
             v-for="link in links"
             :key="link.to"
             :to="link.to"
-            class="dark:text-white text-sm"
+            class="text-white text-sm"
             :class="{ '!text-orange-400': isActive(link.to) }"
           >
             {{ link.label }}
@@ -47,10 +48,7 @@ const isActive = (path: string) => route.hash === path;
       </ClientOnly>
 
       <!-- Mobile Menu Button -->
-      <button
-        class="md:hidden text-gray-700 dark:text-gray-300"
-        @click="isMenuOpen = true"
-      >
+      <button class="md:hidden text-gray-300" @click="isMenuOpen = true">
         <UIcon name="i-heroicons-bars-3" class="w-6 h-6" />
       </button>
     </UContainer>
@@ -61,10 +59,7 @@ const isActive = (path: string) => route.hash === path;
         <div class="flex justify-between items-center">
           <h2 class="text-lg font-semibold">Menu</h2>
           <button @click="isMenuOpen = false">
-            <UIcon
-              name="i-heroicons-x-mark"
-              class="w-6 h-6 text-gray-700 dark:text-gray-300"
-            />
+            <UIcon name="i-heroicons-x-mark" class="w-6 h-6 text-gray-300" />
           </button>
         </div>
 
@@ -73,7 +68,7 @@ const isActive = (path: string) => route.hash === path;
             v-for="link in links"
             :key="link.to"
             :to="link.to"
-            class="block text-gray-700 dark:text-gray-300 hover:text-primary"
+            class="block text-gray-300 hover:text-primary"
           >
             {{ link.label }}
           </NuxtLink>

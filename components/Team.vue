@@ -1,15 +1,19 @@
 <template>
-  <div id="team" class="my-8">
-    <div class="flex items-center justify-center">
+  <div id="team" class="py-28 bg-black relative">
+    <Gradient />
+    <div
+      class="flex items-center justify-center font-carterOne"
+      data-aos="fade-down"
+    >
       <SparklesText
-        text="Our Team"
+        text="Meet Our Professionals"
         :colors="{ first: '#fff', second: '#FE8BBB' }"
         :sparkles-count="5"
         class="md:text-5xl text-3xl font-bold text-orange-400"
       />
     </div>
-    <div class="flex items-center justify-center my-10 gap-4">
-      <div>
+    <div class="flex items-center justify-center my-10 gap-4 flex-wrap">
+      <div v-for="i in 4" :key="i" data-aos="fade-down">
         <GlareCard class="flex flex-col items-center justify-center relative">
           <nuxt-img
             src="/team/akm.jpg"
@@ -19,32 +23,38 @@
             alt="team-member"
             class="w-full h-full z-10"
           />
-          <div class="z-20 absolute bottom-[0.7rem] bg-black/60 w-full">
-            <h1 class="mt-2 text-lg font-bold text-white text-center">
+          <div class="z-20 absolute bottom-[0.7rem] bg-black/50 w-full">
+            <h1 class="text-lg font-bold text-white text-center font-carterOne">
               Mr Aung Kaung Myat
             </h1>
             <p
-              class="mb-2 font-bold font-mono text-xs text-center text-slate-300"
+              class="mb-1 font-bold font-carterOne text-xs text-center text-orange-400"
             >
               Software Engineer & Founder
+            </p>
+            <p
+              class="text-[0.61rem] text-center font-mono font-light text-slate-300"
+            >
+              4 years of experience in software development, specializing in web
+              applications.
             </p>
           </div>
         </GlareCard>
         <div
-          class="flex items-center justify-center gap-2 bg-black/90 dark:bg-white rounded-b-[10px]"
+          class="flex items-center justify-center gap-5 bg-gradient-to-r from-blue-700 to-orange-900 rounded-b-3xl pt-2"
         >
           <nuxt-link
             to="https://www.linkedin.com/in/aung-kaung-myat-a82700222/"
             target="_blank"
             class="z-50"
           >
-            <UIcon name="i-mdi:linkedin" class="w-6 h-6 text-[#0077B5]" />
+            <UIcon name="i-mdi:linkedin" class="w-6 h-6 text-white" />
           </nuxt-link>
           <nuxt-link to="https://www.facebook.com/aung.akm2000" target="_blank">
-            <UIcon name="i-mdi:facebook-box" class="w-6 h-6 text-[#1877F2]" />
+            <UIcon name="i-mdi:facebook-box" class="w-6 h-6 text-white" />
           </nuxt-link>
           <nuxt-link to="https://t.me/aung_kg_myat" target="_blank">
-            <UIcon name="i-mdi:telegram" class="w-6 h-6 text-[#0088CC]" />
+            <UIcon name="i-mdi:telegram" class="w-6 h-6 text-white" />
           </nuxt-link>
         </div>
       </div>

@@ -63,10 +63,10 @@
           class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:p-36 text-center w-full"
         >
           <div
-            class="flex flex-col items-center justify-start space-y-1 md:space-y-14"
+            class="flex flex-col items-center justify-start space-y-5 md:space-y-14"
           >
             <h1
-              class="text-center font-bold lg:text-5xl text-3xl text-white font-mono"
+              class="mb-8 md:mb-0 text-center font-bold lg:text-5xl text-3xl text-white font-mono"
             >
               <Flipwords
                 :words="[
@@ -95,11 +95,19 @@
             </div>
             <client-only>
               <Vue3Lottie
-                animationLink="/lottie/laptop.json"
-                :height="220"
-                :width="220"
+                animationLink="/lottie/globe.json"
+                :height="250"
+                :width="250"
               />
             </client-only>
+            <!-- <div
+              class="relative flex size-full flex-col items-center justify-center overflow-hidden bg-transparent px-40 pb-40 pt-8 md:pb-60 md:shadow-xl h-[220px] md:h-[290px]"
+            >
+              <Globe class="top-0" />
+              <div
+                class="pointer-events-none absolute inset-0 h-full bg-[radial-gradient(circle_at_50%_200%,rgba(0,0,0,0.2),rgba(255,255,255,0))]"
+              />
+            </div> -->
             <div
               class="flex items-center justify-center max-lg:w-full min-md:flex-1 text-gray-400 lg:text-lg text-md text-balance font-mono"
             >

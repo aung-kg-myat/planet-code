@@ -7,7 +7,7 @@ import FlikeringGrid from "./FlikeringGrid.vue";
     <Gradient />
     <ClientOnly>
       <div
-        class="relative h-screen w-full overflow-hidden bg-background"
+        class="relative h-[1000px] md:h-screen w-full overflow-hidden bg-background"
         data-aos="fade-down"
       >
         <nuxt-img
@@ -16,7 +16,7 @@ import FlikeringGrid from "./FlikeringGrid.vue";
           :srcset="`/images/freepic1.png 480w, /images/freepic1.png 800w`"
           sizes="(max-width: 600px) 480px, 800px"
           alt="hero-background"
-          class="w-full h-screen"
+          class="w-full h-[1000px] md:h-screen"
         />
 
         <!-- <FlikeringGrid
@@ -38,12 +38,16 @@ import FlikeringGrid from "./FlikeringGrid.vue";
                 class="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400"
                 :duration="4"
               >
-                <span class="md:text-5xl text-3xl font-bold font-carterOne"
+                <span class="md:text-5xl text-2xl font-bold font-carterOne"
                   ><span class="text-white">PLANET</span> CODE</span
                 >
               </RadiantText>
             </div>
-            <img src="/logo/planet_code.png" alt="logo" class="w-24 h-24" />
+            <img
+              src="/logo/planet_code.png"
+              alt="logo"
+              class="md:w-24 md:h-24 w-16 h-16"
+            />
           </div>
           <h1 class="text-center font-bold section-title px-8 font-carterOne">
             Your Trusted Partner in Software Development

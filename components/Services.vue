@@ -19,7 +19,7 @@
       class="my-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 items-center justify-center gap-5 z-30 max-w-7xl mx-4"
     >
       <div
-        class="relative w-full md:h-[200px] h-[180px]"
+        class="relative w-full h-[200px]"
         v-for="service in services"
         :key="service.title"
       >

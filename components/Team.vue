@@ -33,7 +33,7 @@
               Software Engineer & Founder
             </p>
             <p
-              class="text-[0.61rem] text-center font-mono font-light text-slate-300"
+              class="text-[0.65rem] text-center font-mono font-light text-slate-300 mb-1"
             >
               4 years of experience in software development, specializing in web
               applications.

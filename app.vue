@@ -1,14 +1,12 @@
-<!-- <Navbar /> 
- <HeroSection /> -->
 <template>
   <Navbar />
   <HeroSection />
   <Services />
   <About />
   <Project />
+  <Technology />
   <Team />
   <Testimonial />
-  <Technology />
+  <Contact />
+  <Footer />
 </template>
-
-<script setup lang="ts"></script>

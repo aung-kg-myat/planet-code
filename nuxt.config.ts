@@ -9,7 +9,12 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["@nuxt/ui", "@nuxt/image", "nuxt-aos"],
+  app: {
+    head: {
+      link: [{ rel: "icon", type: "image/png", href: "/logo/planet_code.png" }],
+    },
+  },
+  modules: ["@nuxt/ui", "@nuxt/image", "nuxt-aos", "nuxt3-notifications", "@nuxt/icon"],
   aos: {
     duration: 900, // Global duration for all animations
     easing: "ease",

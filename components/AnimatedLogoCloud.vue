@@ -47,8 +47,16 @@
 
 <script setup lang="ts">
 import { cn } from "@/lib/utils";
-import type { AnimateLogoCloudProps } from "./index";
 
+interface Logo {
+  name: string;
+  path: string;
+}
+interface AnimateLogoCloudProps {
+  class?: string;
+  title?: string;
+  logos?: Logo[];
+}
 const props = defineProps<AnimateLogoCloudProps>();
 </script>
 

@@ -9,6 +9,7 @@ const links = [
   { label: "About", to: "#about" },
   { label: "Projects", to: "#projects" },
   { label: "Testimonials", to: "#testimonials" },
+  { label: "Contact", to: "#contact" },
 ];
 
 const route = useRoute();

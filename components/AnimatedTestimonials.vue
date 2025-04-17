@@ -79,7 +79,7 @@
               </p>
             </div>
             <h3
-              class="bg-white text-orange-400 px-1 rounded-md font-bold text-[0.9rem] font-carterOne"
+              class="bg-white text-[#755dcd] px-1 rounded-md font-bold text-[0.9rem] font-carterOne"
             >
               remarked on {{ props.testimonials[active].on }}
             </h3>

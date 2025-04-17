@@ -12,7 +12,7 @@
         text="Our Services"
         :colors="{ first: '#fff', second: '#FE8BBB' }"
         :sparkles-count="5"
-        class="md:text-5xl text-3xl font-bold text-orange-400"
+        class="md:text-5xl text-3xl font-bold text-[#755dcd]"
       />
     </div>
     <div
@@ -36,7 +36,7 @@
               <UIcon :name="service.iconClass" class="w-6 h-6 text-white" />
 
               <h1
-                class="relative z-50 text-xl font-bold text-orange-400 font-carterOne"
+                class="relative z-50 text-xl font-bold text-[#755dcd] font-carterOne"
               >
                 {{ service.title }}
               </h1>

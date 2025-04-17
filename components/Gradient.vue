@@ -1,6 +1,6 @@
 <template>
   <div
-    class="absolute w-full -top-px transition-all text-orange-400 shrink-0 z-20 duration-500"
+    class="absolute w-full -top-px transition-all text-[#755dcd] shrink-0 z-20 duration-500"
   >
     <svg
       viewBox="0 0 1440 181"

@@ -18,18 +18,18 @@ const isActive = (path: string) => route.hash === path;
 
 <template>
   <header
-    class="bg-slate-900 shadow-sm sticky top-0 backdrop-blur-md z-50 font-mono py-1"
+    class="bg-slate-600/80 shadow-sm sticky top-0 backdrop-blur-md z-50 font-mono py-1"
   >
     <UContainer class="flex items-center justify-between">
       <!-- Logo -->
-      <NuxtLink to="/" class="text-xl font-bold text-orange-400">
+      <NuxtLink to="/" class="text-xl font-bold text-[#755dcd]">
         <nuxt-img
           src="/logo/planet_code.png"
           format="webp"
           :srcset="`logo/planet_code.png 480w, logo/planet_code.png 800w`"
           sizes="(max-width: 600px) 480px, 800px"
           alt="logo"
-          class="w-14 h-14"
+          class="w-16 h-16"
         />
         <!-- Space <span class="text-white">Lab</span> -->
       </NuxtLink>
@@ -42,7 +42,7 @@ const isActive = (path: string) => route.hash === path;
             :key="link.to"
             :to="link.to"
             class="text-white text-sm"
-            :class="{ '!text-orange-400': isActive(link.to) }"
+            :class="{ '!text-[#755dcd]': isActive(link.to) }"
           >
             {{ link.label }}
           </NuxtLink>

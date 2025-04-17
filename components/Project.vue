@@ -9,7 +9,7 @@
         text="Projects"
         :colors="{ first: '#fff', second: '#FE8BBB' }"
         :sparkles-count="5"
-        class="md:text-5xl text-3xl font-bold text-orange-400"
+        class="md:text-5xl text-3xl font-bold text-[#755dcd]"
       />
     </div>
     <div class="flex items-center justify-center gap-8 flex-wrap my-10">
@@ -42,14 +42,14 @@
               <nuxt-link
                 to="https://www.metrohunters.com/"
                 target="_blank"
-                class="text-orange-400"
+                class="text-[#755dcd]"
                 >MetroHunters</nuxt-link
               >
             </p>
             <nuxt-link
               to="https://t.me/BeaverKombatBot"
               target="_blank"
-              class="font-carterOne text-orange-400"
+              class="font-carterOne text-[#755dcd]"
               >Go to Link</nuxt-link
             >
           </div>
@@ -84,14 +84,14 @@
               <nuxt-link
                 to="https://www.metrohunters.com/"
                 target="_blank"
-                class="text-orange-400"
+                class="text-[#755dcd]"
                 >MetroHunters</nuxt-link
               >
             </p>
             <nuxt-link
               to="https://beaver-kombat.fans"
               target="_blank"
-              class="font-carterOne text-orange-400"
+              class="font-carterOne text-[#755dcd]"
               >Go to Link</nuxt-link
             >
           </div>

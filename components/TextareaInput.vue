@@ -72,7 +72,7 @@ const containerBg = computed(() => {
           ${visible.value ? radius + "px" : "0px"} circle at ${
     mouse.value.x
   }px ${mouse.value.y}px,
-          var(--orange-400),
+          var(--purple-500),
           transparent 80%
         )
       `;

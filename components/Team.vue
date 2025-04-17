@@ -9,7 +9,7 @@
         text="Meet Our Professionals"
         :colors="{ first: '#fff', second: '#FE8BBB' }"
         :sparkles-count="5"
-        class="md:text-5xl text-3xl font-bold text-orange-400"
+        class="md:text-5xl text-3xl font-bold text-[#755dcd]"
       />
     </div>
     <div class="flex items-center justify-center my-10 gap-4 flex-wrap">
@@ -23,12 +23,12 @@
             alt="team-member"
             class="w-full h-full z-10"
           />
-          <div class="z-20 absolute bottom-[0.7rem] bg-black/50 w-full">
+          <div class="z-20 absolute bottom-[0.7rem] bg-black/80 w-full">
             <h1 class="text-lg font-bold text-white text-center font-carterOne">
               Mr Aung Kaung Myat
             </h1>
             <p
-              class="mb-1 font-bold font-carterOne text-xs text-center text-orange-400"
+              class="mb-1 font-bold font-carterOne text-xs text-center text-[#755dcd]"
             >
               Software Engineer & Founder
             </p>

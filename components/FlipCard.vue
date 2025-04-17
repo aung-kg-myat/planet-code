@@ -20,7 +20,7 @@
         />
         <div class="absolute bottom-4 left-4 text-xl font-bold text-white">
           <div
-            class="flex items-center justify-center gap-2 text-orange-400 backdrop-blur-lg"
+            class="flex items-center justify-center gap-2 text-[#755dcd] backdrop-blur-lg"
           >
             <span>{{ props.title }}</span>
             <UIcon :name="props.iconClass" class="w-6 h-6 text-white" />
@@ -38,7 +38,7 @@
         "
       >
         <div class="flex min-h-full flex-col gap-2">
-          <h1 class="text-xl font-bold text-orange-400">
+          <h1 class="text-xl font-bold text-[#755dcd]">
             {{ props.subtitle }}
           </h1>
           <p

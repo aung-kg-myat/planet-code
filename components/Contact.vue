@@ -10,7 +10,7 @@
         text="Keep In Touch With Us"
         :colors="{ first: '#fff', second: '#FE8BBB' }"
         :sparkles-count="5"
-        class="md:text-5xl text-3xl font-bold text-orange-400"
+        class="md:text-5xl text-3xl font-bold text-[#755dcd]"
       />
     </div>
     <div

@@ -11,24 +11,13 @@ import FlikeringGrid from "./FlikeringGrid.vue";
         data-aos="fade-down"
       >
         <nuxt-img
-          src="/images/freepic1.png"
+          src="/images/freepic1.jpg"
           format="webp"
-          :srcset="`/images/freepic1.png 480w, /images/freepic1.png 800w`"
+          :srcset="`/images/freepic1.jpg 480w, /images/freepic1.jpg 800w`"
           sizes="(max-width: 600px) 480px, 800px"
           alt="hero-background"
           class="w-full h-[1000px] md:h-screen"
         />
-
-        <!-- <FlikeringGrid
-          class="relative inset-0 z-0 [mask-image:radial-gradient(450px_circle_at_center,white,transparent)]"
-          :square-size="4"
-          :grid-gap="6"
-          color="#FB923C"
-          :max-opacity="0.5"
-          :flicker-chance="0.1"
-          :width="1400"
-          :height="700"
-        /> -->
         <div
           class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full"
         >
@@ -44,9 +33,9 @@ import FlikeringGrid from "./FlikeringGrid.vue";
               </RadiantText>
             </div>
             <img
-              src="/logo/planet_code.png"
+              src="/logo/planet_code_full.jpeg"
               alt="logo"
-              class="md:w-24 md:h-24 w-16 h-16"
+              class="md:w-24 md:h-24 w-16 h-16 rounded-lg"
             />
           </div>
           <h1 class="text-center font-bold section-title px-8 font-carterOne">
@@ -57,7 +46,7 @@ import FlikeringGrid from "./FlikeringGrid.vue";
           >
             At
             <span class="font-carterOne"
-              >PLANET <span class="!text-orange-400">CODE</span></span
+              >PLANET <span class="!text-[#755dcd]">CODE</span></span
             >, we are your go-to partner for cutting-edge software development,
             specializing in crafting innovative solutions for web, mobile, and
             enterprise platforms. Whether you need a sleek, high-performance
@@ -66,7 +55,7 @@ import FlikeringGrid from "./FlikeringGrid.vue";
             to bring your vision to life. <br /><br />
             At
             <span class="font-carterOne"
-              >PLANET <span class="!text-orange-400">CODE</span></span
+              >PLANET <span class="!text-[#755dcd]">CODE</span></span
             >, we believe that technology should be a catalyst for success. Our
             approach is deeply collaborative—we take the time to understand your
             challenges, goals, and ambitions, ensuring that our solutions not
@@ -77,7 +66,7 @@ import FlikeringGrid from "./FlikeringGrid.vue";
             digital era. 🚀 Let’s innovate, grow, and redefine possibilities
             together with
             <span class="font-carterOne"
-              >PLANET <span class="!text-orange-400">CODE</span></span
+              >PLANET <span class="!text-[#755dcd]">CODE</span></span
             >!
           </p>
         </div>

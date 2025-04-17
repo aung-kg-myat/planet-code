@@ -3,7 +3,7 @@
     :style="styleVar"
     :class="
       cn(
-        'mx-auto text-orange-400/70',
+        'mx-auto text-[#755dcd]/70',
         // Radiant effect
         'radiant-animation bg-clip-text bg-no-repeat [background-position:0_0] [background-size:var(--radiant-width)_100%] [transition:background-position_1s_cubic-bezier(.6,.6,0,1)_infinite]',
         // Radiant gradient

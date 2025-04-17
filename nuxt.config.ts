@@ -12,12 +12,6 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [{ rel: "icon", type: "image/png", href: "/logo/planet_code.png" }],
-      meta: [
-        { 
-          name: 'google-site-verification', 
-          content: 'TnIhYEc3y7xR_jUO5BPegYsLjqyLzrZBvie4wlNh3rM' 
-        }
-      ]
     },
   },
   modules: [

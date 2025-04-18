@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      link: [{ rel: "icon", type: "image/png", href: "/logo/planet_code.png" }],
+      link: [{ rel: "icon", type: "image/jpeg", href: "/logo/planet_code_full.jpeg" }],
     },
   },
   modules: [

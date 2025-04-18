@@ -13,7 +13,7 @@
       />
     </div>
     <div class="flex items-center justify-center my-10 gap-4 flex-wrap">
-      <div v-for="i in 4" :key="i" data-aos="fade-down">
+      <div data-aos="fade-down">
         <GlareCard class="flex flex-col items-center justify-center relative">
           <nuxt-img
             src="/team/akm.jpg"
@@ -36,7 +36,7 @@
               class="text-[0.65rem] text-center font-mono font-light text-slate-300 mb-1"
             >
               4 years of experience in software development, specializing in web
-              applications.
+              applications development.
             </p>
           </div>
         </GlareCard>

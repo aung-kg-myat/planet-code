@@ -48,11 +48,8 @@ const isActive = (path: string) => {
             :class="{ '!text-[#755dcd]': isActive(link.to) }"
           >
             <template v-if="link.label === 'Contact'">
-              <!-- <div class="bg-[#755dcd] text-white py-2 px-4 rounded-lg animate-bounce">
-                {{ link.label }}
-              </div> -->
               <RainbowButton
-                class="font-carterOne !animate-bounce"
+                class="font-carterOne"
               >
               {{ link.label }}
               </RainbowButton>
@@ -99,9 +96,11 @@ const isActive = (path: string) => {
               @click="isMenuOpen = false"
             >
               <template v-if="link.label === 'Contact'">
-                <div class="bg-[#755dcd] p-2 rounded-lg">
+                <RainbowButton
+                  class="font-carterOne"
+                >
                   {{ link.label }}
-                </div>
+                </RainbowButton>
               </template>
               <template v-else>
                {{ link.label }}

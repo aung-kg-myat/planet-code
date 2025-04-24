@@ -2,10 +2,10 @@
   <div
     class="mx-auto max-w-sm px-4 py-20 font-sans antialiased lg:px-12 md:max-w-[80%] md:px-8"
   >
-    <div class="relative grid grid-cols-1 gap-20 md:grid-cols-3">
-      <div class="flex items-center justify-center">
+    <div class="relative grid grid-cols-1 gap-20 md:grid-cols-5 lg:grid-cols-3">
+      <div class="flex items-center justify-center lg:col-span-1 md:col-span-2">
         <div class="relative h-80 w-full">
-          <AnimatePresence>
+            <AnimatePresence>
             <Motion
               v-for="(testimonial, index) in props.testimonials"
               :key="testimonial.image"
@@ -34,21 +34,20 @@
                 duration: 0.4,
                 ease: 'easeInOut',
               }"
-              class="absolute inset-0 origin-bottom"
+              class="absolute inset-0 origin-bottom flex items-center justify-center"
             >
               <NuxtImg
                 :src="testimonial.image"
                 :alt="testimonial.name"
-                width="100"
-                height="100"
+                :sizes="'sm:300px md:500px'"
                 :draggable="false"
-                class="size-full rounded-3xl md:w-[80%] md:h-[80%] object-cover object-center"
+                class="w-[90%] h-[90%] rounded-3xl object-cover object-center"
               />
             </Motion>
           </AnimatePresence>
         </div>
       </div>
-      <div class="flex flex-col justify-between py-4 md:col-span-2">
+      <div class="flex flex-col justify-between py-4 lg:col-span-2 md:col-span-3">
         <Motion
           :key="active"
           as="div"

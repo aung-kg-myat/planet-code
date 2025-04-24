@@ -1,14 +1,6 @@
 <template>
   <div id="testimonials" class="relative py-28 bg-black">
     <Gradient />
-    <!-- <nuxt-img
-      src="/images/freepic.jpg"
-      format="webp"
-      :srcset="`/images/freepic.jpg 480w, /images/freepic.jpg 800w`"
-      sizes="(max-width: 600px) 480px, 800px"
-      alt="hero-background"
-      class="w-full h-screen"
-    /> -->
     <div data-aos="fade-down">
       <div class="flex items-center justify-center font-carterOne">
         <SparklesText

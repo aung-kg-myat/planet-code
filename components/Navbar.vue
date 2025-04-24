@@ -13,7 +13,11 @@ const links = [
 ];
 
 const route = useRoute();
-const isActive = (path: string) => route.hash === path;
+const isActive = (path: string) => {
+  if (route.hash === path) {
+    return true
+  }
+}
 </script>
 
 <template>
@@ -22,7 +26,7 @@ const isActive = (path: string) => route.hash === path;
   >
     <UContainer class="flex items-center justify-between">
       <!-- Logo -->
-      <NuxtLink to="/" class="text-xl font-bold text-[#755dcd]">
+      <NuxtLink to="/">
         <nuxt-img
           src="/logo/planet_code.png"
           format="webp"
@@ -31,12 +35,11 @@ const isActive = (path: string) => route.hash === path;
           alt="logo"
           class="w-16 h-16"
         />
-        <!-- Space <span class="text-white">Lab</span> -->
       </NuxtLink>
 
       <!-- Desktop Navigation -->
       <ClientOnly>
-        <nav class="hidden md:flex space-x-6">
+        <nav class="hidden md:flex space-x-6 items-center justify-center gap-4">
           <NuxtLink
             v-for="link in links"
             :key="link.to"
@@ -44,7 +47,19 @@ const isActive = (path: string) => route.hash === path;
             class="text-white text-sm"
             :class="{ '!text-[#755dcd]': isActive(link.to) }"
           >
-            {{ link.label }}
+            <template v-if="link.label === 'Contact'">
+              <!-- <div class="bg-[#755dcd] text-white py-2 px-4 rounded-lg animate-bounce">
+                {{ link.label }}
+              </div> -->
+              <RainbowButton
+                class="font-carterOne !animate-bounce"
+              >
+              {{ link.label }}
+              </RainbowButton>
+            </template>
+            <template v-else>
+              {{ link.label }}
+            </template> 
           </NuxtLink>
         </nav>
       </ClientOnly>
@@ -56,26 +71,46 @@ const isActive = (path: string) => route.hash === path;
     </UContainer>
 
     <!-- Mobile Slide-over Menu -->
-    <USlideover v-model="isMenuOpen">
-      <UCard class="p-4">
-        <div class="flex justify-between items-center">
-          <h2 class="text-lg font-semibold">Menu</h2>
-          <button @click="isMenuOpen = false">
-            <UIcon name="i-heroicons-x-mark" class="w-6 h-6 text-gray-300" />
-          </button>
+    <div class="flex items-end justify-end w-full">
+      <USlideover v-model="isMenuOpen" class="w-[100%] h-full">
+        <div class="flex justify-between items-center px-6 py-2 lg:px-8 bg-slate-600/80">
+            <NuxtLink to="/">
+              <nuxt-img
+                src="/logo/planet_code.png"
+                format="webp"
+                :srcset="`logo/planet_code.png 480w, logo/planet_code.png 800w`"
+                sizes="(max-width: 600px) 480px, 800px"
+                alt="logo"
+                class="w-16 h-16"
+              />
+            </NuxtLink>
+            <button @click="isMenuOpen = false">
+              <UIcon name="i-heroicons-x-mark" class="w-6 h-6 text-gray-300" />
+            </button>
         </div>
-
-        <nav class="mt-4 space-y-4">
-          <NuxtLink
-            v-for="link in links"
-            :key="link.to"
-            :to="link.to"
-            class="block text-gray-300 hover:text-primary"
-          >
-            {{ link.label }}
-          </NuxtLink>
-        </nav>
-      </UCard>
-    </USlideover>
+        <UCard class="p-4 flex items-center justify-center h-full">
+          <nav class="mt-4 space-y-4 flex flex-col items-center justify-center gap-4">
+            <NuxtLink
+              v-for="link in links"
+              :key="link.to"
+              :to="link.to"
+              class="block text-gray-300"
+              :class="{ '!text-[#755dcd]': isActive(link.to) && link.to !== '#contact' }"
+              @click="isMenuOpen = false"
+            >
+              <template v-if="link.label === 'Contact'">
+                <div class="bg-[#755dcd] p-2 rounded-lg">
+                  {{ link.label }}
+                </div>
+              </template>
+              <template v-else>
+               {{ link.label }}
+              </template> 
+            </NuxtLink>
+          </nav>
+        </UCard>
+      </USlideover>
+    </div>
+    
   </header>
 </template>

@@ -1,38 +1,39 @@
 <script setup lang="ts">
-// const img = useImage();
+const img = useImage();
+const backgroundStyles = computed(() => {
+  // Mobile-first approach with responsive breakpoints
+  const imageUrl = img("/images/freepic1.jpg", {
+    format: "webp",
+    quality: 90,
+  });
 
-// const backgroundStyles = computed(() => {
-//   // Mobile-first approach with responsive breakpoints
-//   const mobileUrl = img("/images/freepic1.jpg", {
-//     format: "webp",
-//     width: 768, // Mobile width
-//     quality: 80,
-//   });
+  return `url('${imageUrl})`;
+});
 
-//   const desktopUrl = img("/images/freepic1.jpg", {
-//     format: "webp",
-//     width: 1920, // Desktop width
-//     quality: 90,
-//   });
+const isDesktop = ref(false);
 
-//   return {
-//     backgroundImage: `url('${mobileUrl}')`,
-//     "@sm": {
-//       backgroundImage: `url('${desktopUrl}')`,
-//     },
-//   };
-// });
+onMounted(() => {
+  // Check if the screen width is larger than 768px (common mobile breakpoint)
+  isDesktop.value = window.innerWidth > 768;
+
+  // Optional: Add event listener for window resize
+  window.addEventListener("resize", () => {
+    isDesktop.value = window.innerWidth > 768;
+  });
+});
 </script>
 
 <template>
   <div id="about" class="w-full relative h-[1000px] md:h-screen">
     <Gradient />
     <section
-      class="relative w-full h-full bg-cover bg-center"
-      style="
-        background-attachment: fixed;
-        background-image: url('/images/freepic1.jpg');
-      "
+      class="relative w-full h-screen bg-center"
+      :class="{ 'bg-fixed': isDesktop }"
+      :style="{
+        backgroundImage: `url('/images/freepic1.jpg')`,
+        backgroundAttachment: isDesktop ? 'fixed' : 'scroll',
+        backgroundSize: isDesktop ? 'cover' : 'auto',
+      }"
     >
       <ClientOnly>
         <div

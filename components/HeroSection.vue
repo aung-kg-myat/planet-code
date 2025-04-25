@@ -3,10 +3,11 @@
     <Gradient />
     <section
       class="relative w-full h-screen bg-cover bg-center"
-      style="
-        background-attachment: fixed;
-        background-image: url('/images/freepic1.jpg');
-      "
+      :style="{
+        backgroundImage: `url('/images/freepic1.jpg')`,
+        backgroundAttachment: isDesktop ? 'fixed' : 'scroll',
+        backgroundSize: isDesktop ? 'cover' : 'auto',
+      }"
     >
       <div class="relative z-10">
         <div class="relative h-screen">
@@ -99,23 +100,22 @@ const particlesColor = computed(() =>
 // const img = useImage();
 // const backgroundStyles = computed(() => {
 //   // Mobile-first approach with responsive breakpoints
-//   const mobileUrl = img("/images/freepic1.jpg", {
+//   const imageUrl = img("/images/freepic1.jpg", {
 //     format: "webp",
-//     width: 768, // Mobile width
-//     quality: 80,
-//   });
-
-//   const desktopUrl = img("/images/freepic1.jpg", {
-//     format: "webp",
-//     width: 1920, // Desktop width
 //     quality: 90,
 //   });
 
-//   return {
-//     backgroundImage: `url('${mobileUrl}')`,
-//     "@sm": {
-//       backgroundImage: `url('${desktopUrl}')`,
-//     },
-//   };
+//   return `url('${imageUrl})`;
 // });
+const isDesktop = ref(false);
+
+onMounted(() => {
+  // Check if the screen width is larger than 768px (common mobile breakpoint)
+  isDesktop.value = window.innerWidth > 768;
+
+  // Optional: Add event listener for window resize
+  window.addEventListener("resize", () => {
+    isDesktop.value = window.innerWidth > 768;
+  });
+});
 </script>

@@ -23,7 +23,7 @@
                 :style="{ '--delay': `${0.6}s` }"
               >
                 <h1
-                  class="mb-8 md:mb-0 text-center font-bold lg:text-5xl text-3xl text-white font-mono"
+                  class="mb-8 md:mb-0 text-center font-bold lg:text-5xl text-2xl text-white font-mono p-2"
                 >
                   <Flipwords
                     :words="[

@@ -86,6 +86,7 @@ onMounted(() => {
     <!-- Mobile Slide-over Menu -->
     <div class="flex items-end justify-end w-full">
       <USlideover v-model="isMenuOpen" class="w-[100%] h-full">
+        <!-- header -->
         <div
           class="flex justify-between items-center px-6 py-2 lg:px-8 bg-slate-600/80"
         >
@@ -116,7 +117,7 @@ onMounted(() => {
           </Transition>
         </div>
 
-        <UCard class="p-4 flex items-center justify-center h-full">
+        <UCard class="p-4 flex items-center justify-center h-full !bg-gray-900">
           <nav
             class="mt-4 space-y-4 flex flex-col items-center justify-center gap-4"
           >

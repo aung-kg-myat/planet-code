@@ -1,7 +1,7 @@
 <template>
   <footer class="bg-slate-900 text-white py-4 relative">
     <Gradient />
-    <div class="container mx-auto text-center text-md px-3" data-aos="fade-down">
+    <div class="container mx-auto text-center text-md px-3">
       <div class="flex items-center justify-center md:gap-5 gap-3 my-8">
         <nuxt-img
           src="/logo/planet_code_full.jpeg"

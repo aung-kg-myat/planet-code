@@ -1,16 +1,9 @@
 <template>
   <div class="relative" id="home">
     <Gradient />
+    <section class="relative w-full h-screen bg-cover bg-center" style="background-attachment: fixed;" :style="backgroundStyles">
     <div class="relative z-10">
       <div class="relative h-screen">
-        <nuxt-img
-          src="/images/freepic.jpg"
-          format="webp"
-          :srcset="`/images/freepic.jpg 480w, /images/freepic.jpg 800w`"
-          sizes="(max-width: 600px) 480px, 800px"
-          alt="hero-background"
-          class="w-full h-screen"
-        />
         <div
           class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:p-36 text-center w-full"
         >
@@ -52,14 +45,6 @@
                 :width="250"
               />
             </client-only>
-            <!-- <div
-              class="relative flex size-full flex-col items-center justify-center overflow-hidden bg-transparent px-40 pb-40 pt-8 md:pb-60 md:shadow-xl h-[220px] md:h-[290px]"
-            >
-              <Globe class="top-0" />
-              <div
-                class="pointer-events-none absolute inset-0 h-full bg-[radial-gradient(circle_at_50%_200%,rgba(0,0,0,0.2),rgba(255,255,255,0))]"
-              />
-            </div> -->
             <div
               class="flex items-center justify-center max-lg:w-full min-md:flex-1 text-gray-400 lg:text-lg text-md text-balance font-mono"
             >
@@ -73,9 +58,11 @@
       </div>
       <div ref="lottieContainer"></div>
     </div>
+    </section>
   </div>
 </template>
 <script setup lang="ts">
+
 import { useColorMode } from "@vueuse/core";
 import { Vue3Lottie } from "vue3-lottie";
 
@@ -83,4 +70,11 @@ const colorMode = useColorMode();
 const particlesColor = computed(() =>
   colorMode.value === "dark" ? "#FFFFFF" : "#000000"
 );
+
+const img = useImage()
+const backgroundStyles = computed(() => {
+  const imgUrl = img('/images/freepic1.jpg', {format: 'webp'})
+
+  return { backgroundImage: `url('${imgUrl}')` }
+})
 </script>

@@ -1,23 +1,21 @@
 <script setup lang="ts">
-import FlikeringGrid from "./FlikeringGrid.vue";
+const img = useImage()
+const backgroundStyles = computed(() => {
+  const imgUrl = img('/images/freepic1.jpg', {format: 'webp'})
+
+  return { backgroundImage: `url('${imgUrl}')` }
+})
 </script>
 
 <template>
   <div id="about" class="w-full relative">
     <Gradient />
-    <ClientOnly>
+    <section class="relative w-full h-screen bg-cover bg-center" style="background-attachment: fixed;" :style="backgroundStyles">
+      <ClientOnly>
       <div
         class="relative h-[1000px] md:h-screen w-full overflow-hidden bg-background"
         data-aos="fade-down"
       >
-        <nuxt-img
-          src="/images/freepic1.jpg"
-          format="webp"
-          :srcset="`/images/freepic1.jpg 480w, /images/freepic1.jpg 800w`"
-          sizes="(max-width: 600px) 480px, 800px"
-          alt="hero-background"
-          class="w-full h-[1000px] md:h-screen"
-        />
         <div
           class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full"
         >
@@ -72,5 +70,7 @@ import FlikeringGrid from "./FlikeringGrid.vue";
         </div>
       </div>
     </ClientOnly>
+    </section>
+    
   </div>
 </template>

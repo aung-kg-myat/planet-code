@@ -27,7 +27,7 @@ onMounted(() => {
   <div id="about" class="w-full relative h-[1000px] md:h-screen">
     <Gradient />
     <section
-      class="relative w-full h-screen bg-center"
+      class="relative w-full md:h-screen h-full bg-center"
       :class="{ 'bg-fixed': isDesktop }"
       :style="{
         backgroundImage: `url('/images/freepic1.jpg')`,

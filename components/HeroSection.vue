@@ -96,8 +96,24 @@ const particlesColor = computed(() =>
 
 const img = useImage();
 const backgroundStyles = computed(() => {
-  const imgUrl = img("/images/freepic1.jpg", { format: "webp" });
+  // Mobile-first approach with responsive breakpoints
+  const mobileUrl = img("/images/freepic1.jpg", {
+    format: "webp",
+    width: 768, // Mobile width
+    quality: 80,
+  });
 
-  return { backgroundImage: `url('${imgUrl}')` };
+  const desktopUrl = img("/images/freepic1.jpg", {
+    format: "webp",
+    width: 1920, // Desktop width
+    quality: 90,
+  });
+
+  return {
+    backgroundImage: `url('${mobileUrl}')`,
+    "@sm": {
+      backgroundImage: `url('${desktopUrl}')`,
+    },
+  };
 });
 </script>

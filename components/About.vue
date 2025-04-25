@@ -1,27 +1,27 @@
 <script setup lang="ts">
-const img = useImage();
+// const img = useImage();
 
-const backgroundStyles = computed(() => {
-  // Mobile-first approach with responsive breakpoints
-  const mobileUrl = img("/images/freepic1.jpg", {
-    format: "webp",
-    width: 768, // Mobile width
-    quality: 80,
-  });
+// const backgroundStyles = computed(() => {
+//   // Mobile-first approach with responsive breakpoints
+//   const mobileUrl = img("/images/freepic1.jpg", {
+//     format: "webp",
+//     width: 768, // Mobile width
+//     quality: 80,
+//   });
 
-  const desktopUrl = img("/images/freepic1.jpg", {
-    format: "webp",
-    width: 1920, // Desktop width
-    quality: 90,
-  });
+//   const desktopUrl = img("/images/freepic1.jpg", {
+//     format: "webp",
+//     width: 1920, // Desktop width
+//     quality: 90,
+//   });
 
-  return {
-    backgroundImage: `url('${mobileUrl}')`,
-    "@sm": {
-      backgroundImage: `url('${desktopUrl}')`,
-    },
-  };
-});
+//   return {
+//     backgroundImage: `url('${mobileUrl}')`,
+//     "@sm": {
+//       backgroundImage: `url('${desktopUrl}')`,
+//     },
+//   };
+// });
 </script>
 
 <template>
@@ -29,8 +29,10 @@ const backgroundStyles = computed(() => {
     <Gradient />
     <section
       class="relative w-full h-full bg-cover bg-center"
-      style="background-attachment: fixed"
-      :style="backgroundStyles"
+      style="
+        background-attachment: fixed;
+        background-image: url('/images/freepic1.jpg');
+      "
     >
       <ClientOnly>
         <div

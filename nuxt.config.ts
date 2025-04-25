@@ -11,7 +11,13 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      link: [{ rel: "icon", type: "image/jpeg", href: "/logo/planet_code_full.jpeg" }],
+      link: [
+        {
+          rel: "icon",
+          type: "image/jpeg",
+          href: "/logo/planet_code_full.jpeg",
+        },
+      ],
     },
   },
   modules: [
@@ -28,8 +34,15 @@ export default defineNuxtConfig({
     easing: "ease",
     once: false, // Set to true if you only want animations to run once
   },
-  site: { 
-    url: 'https://planet-code.vercel.app', 
-    name: 'Planet Code Software Solution' 
-  }, 
+  site: {
+    url: "https://planet-code.vercel.app",
+    name: "Planet Code Software Solution", // Primary name
+    // For alternate names (SEO-friendly):
+    alternates: {
+      names: {
+        short: "Planet Code",
+        legal: "Planet Code Software Solutions Co., Ltd.",
+      },
+    },
+  },
 });

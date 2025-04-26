@@ -94,7 +94,7 @@ const backgroundPosition = ref("center 0px");
 
 const updateBackgroundPosition = () => {
   const offset = window.pageYOffset; // Get the current scroll position
-  backgroundPosition.value = `center ${offset * 1}px`; // Adjust speed (1s for parallax effect)
+  backgroundPosition.value = `center ${offset * 0.5}px`; // Adjust speed (1s for parallax effect)
 };
 
 onMounted(() => {

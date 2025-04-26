@@ -30,8 +30,8 @@ export default defineNuxtConfig({
     "@nuxtjs/robots",
   ],
   aos: {
-    duration: 900, // Global duration for all animations
-    easing: "ease",
+    duration: 500, // Global duration for all animations
+    easing: "ease in",
     once: false, // Set to true if you only want animations to run once
   },
   site: {

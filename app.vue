@@ -1,5 +1,5 @@
 <template>
-  <Transition name="fade" appear :style="{ '--delay': `${2 * 0.15}s` }">
+  <Transition name="fade" appear :style="{ '--delay': `${0.5}s` }">
     <template v-if="isMounted">
       <div>
         <Analytics />
@@ -43,11 +43,12 @@ onMounted(() => {
 
 <style scoped>
 .fade-enter-active {
-  transition: all 1.5s ease;
+  transition: all 0.5s ease;
   transition-delay: var(--delay, 0);
 }
 
 .fade-enter-from {
   opacity: 0;
+  transform: translateY(-10px);
 }
 </style>

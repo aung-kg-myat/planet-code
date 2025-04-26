@@ -5,8 +5,7 @@
       class="relative w-full h-screen bg-cover bg-center"
       :style="{
         backgroundImage: `url('/images/freepic1.jpg')`,
-        backgroundAttachment: isDesktop ? 'fixed' : 'scroll',
-        backgroundSize: isDesktop ? 'cover' : 'auto',
+        backgroundPosition: backgroundPosition,
       }"
     >
       <div class="relative z-10">
@@ -89,33 +88,20 @@
   </div>
 </template>
 <script setup lang="ts">
-import { useColorMode } from "@vueuse/core";
 import { Vue3Lottie } from "vue3-lottie";
 
-const colorMode = useColorMode();
-const particlesColor = computed(() =>
-  colorMode.value === "dark" ? "#FFFFFF" : "#000000"
-);
+const backgroundPosition = ref("center 0px");
 
-// const img = useImage();
-// const backgroundStyles = computed(() => {
-//   // Mobile-first approach with responsive breakpoints
-//   const imageUrl = img("/images/freepic1.jpg", {
-//     format: "webp",
-//     quality: 90,
-//   });
-
-//   return `url('${imageUrl})`;
-// });
-const isDesktop = ref(false);
+const updateBackgroundPosition = () => {
+  const offset = window.pageYOffset; // Get the current scroll position
+  backgroundPosition.value = `center ${offset * 1}px`; // Adjust speed (1s for parallax effect)
+};
 
 onMounted(() => {
-  // Check if the screen width is larger than 768px (common mobile breakpoint)
-  isDesktop.value = window.innerWidth > 768;
+  window.addEventListener("scroll", updateBackgroundPosition);
+});
 
-  // Optional: Add event listener for window resize
-  window.addEventListener("resize", () => {
-    isDesktop.value = window.innerWidth > 768;
-  });
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", updateBackgroundPosition);
 });
 </script>

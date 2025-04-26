@@ -1,25 +1,17 @@
 <script setup lang="ts">
-const img = useImage();
-const backgroundStyles = computed(() => {
-  // Mobile-first approach with responsive breakpoints
-  const imageUrl = img("/images/freepic1.jpg", {
-    format: "webp",
-    quality: 90,
-  });
+const backgroundPosition = ref("center 0px");
 
-  return `url('${imageUrl})`;
-});
-
-const isDesktop = ref(false);
+const updateBackgroundPosition = () => {
+  const offset = window.pageYOffset; // Get the current scroll position
+  backgroundPosition.value = `center ${offset * 0.5}px`; // Adjust speed (0.5s for parallax effect)
+};
 
 onMounted(() => {
-  // Check if the screen width is larger than 768px (common mobile breakpoint)
-  isDesktop.value = window.innerWidth > 768;
+  window.addEventListener("scroll", updateBackgroundPosition);
+});
 
-  // Optional: Add event listener for window resize
-  window.addEventListener("resize", () => {
-    isDesktop.value = window.innerWidth > 768;
-  });
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", updateBackgroundPosition);
 });
 </script>
 
@@ -27,6 +19,13 @@ onMounted(() => {
   <div id="about" class="w-full relative h-[1000px] md:h-screen">
     <Gradient />
     <section
+      class="relative w-full md:h-screen h-full bg-cover bg-center"
+      :style="{
+        backgroundImage: `url('/images/freepic1.jpg')`,
+        backgroundPosition: backgroundPosition,
+      }"
+    >
+      <!-- <section
       class="relative w-full md:h-screen h-full bg-center"
       :class="{ 'bg-fixed': isDesktop }"
       :style="{
@@ -34,7 +33,7 @@ onMounted(() => {
         backgroundAttachment: isDesktop ? 'fixed' : 'scroll',
         backgroundSize: isDesktop ? 'cover' : 'auto',
       }"
-    >
+    > -->
       <ClientOnly>
         <div
           class="relative w-full h-full overflow-hidden bg-background flex items-center justify-center"

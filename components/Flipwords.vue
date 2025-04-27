@@ -19,7 +19,19 @@
               animationDelay: `${wordIndex * 0.3}s`,
             }"
           >
-            {{ wordObj.word }}
+            <span
+              v-if="wordObj.word === 'Planet'"
+              class="text-white font-carterOne uppercase"
+            >
+              {{ wordObj.word }}
+            </span>
+            <span
+              v-else-if="wordObj.word === 'Code'"
+              class="text-[#755dcd] font-carterOne uppercase"
+            >
+              {{ wordObj.word }}
+            </span>
+            <span v-else>{{ wordObj.word }}</span>
             <!-- <span
               v-for="(letter, letterIndex) in wordObj.letters"
               :key="wordObj.word + letterIndex"
@@ -154,7 +166,7 @@ watch(isVisible, (newValue) => {
   }
   100% {
     opacity: 0;
-    transform: scale(2);
+    transform: scale(1.1);
     filter: blur(8px);
   }
 }

@@ -14,7 +14,7 @@
         >
           <Transition name="fade-down" appear :style="{ '--delay': `${0.6}s` }">
             <h1
-              class="mb-8 md:mb-0 h-[200px] md:h-[145px] text-center font-bold lg:text-5xl text-2xl text-white p-2"
+              class="mb-5 md:mb-0 h-[150px] md:h-[145px] text-center font-bold lg:text-4xl text-2xl text-white p-2"
             >
               <Flipwords
                 :words="words"

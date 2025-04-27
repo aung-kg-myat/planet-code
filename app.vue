@@ -13,6 +13,7 @@
         <Testimonial />
         <Contact />
         <Footer />
+        <ScrollToTop />
       </div>
     </template>
   </Transition>

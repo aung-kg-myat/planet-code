@@ -13,13 +13,14 @@
           :key="wordObj.word + wordIndex"
         >
           <span
-            class="inline-block whitespace-nowrap opacity-0"
+            class="inline-block whitespace-nowrap opacity-0 lg:my-4 my-2"
             :style="{
               animation: `fadeInWord 0.3s ease forwards`,
               animationDelay: `${wordIndex * 0.3}s`,
             }"
           >
-            <span
+            {{ wordObj.word }}
+            <!-- <span
               v-for="(letter, letterIndex) in wordObj.letters"
               :key="wordObj.word + letterIndex"
               class="inline-block opacity-0"
@@ -29,7 +30,7 @@
               }"
             >
               {{ letter }}
-            </span>
+            </span> -->
             <span class="inline-block">&nbsp;</span>
           </span>
         </template>

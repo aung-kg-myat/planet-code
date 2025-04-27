@@ -28,6 +28,7 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxtjs/sitemap",
     "@nuxtjs/robots",
+    "@nuxtjs/i18n",
   ],
   aos: {
     duration: 500, // Global duration for all animations
@@ -43,6 +44,28 @@ export default defineNuxtConfig({
         short: "Planet Code",
         legal: "Planet Code Software Solutions Co., Ltd.",
       },
+    },
+  },
+  i18n: {
+    locales: [
+      {
+        code: "en",
+        name: "English",
+        file: "en.json",
+      },
+      {
+        code: "mm",
+        name: "မြန်မာ",
+        file: "mm.json",
+      },
+    ],
+    lazy: true,
+    langDir: "locales", // Directory where translation files are stored
+    defaultLocale: "en", // Fallback language
+    strategy: "prefix_except_default", // URLs: /mm/about, /about (for en)
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: "i18n_redirected",
     },
   },
 });

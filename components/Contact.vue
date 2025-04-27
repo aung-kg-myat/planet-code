@@ -7,7 +7,7 @@
       data-aos="fade-down"
     >
       <SparklesText
-        text="Keep In Touch With Us"
+        :text="$t('contact.title')"
         :colors="{ first: '#fff', second: '#FE8BBB' }"
         :sparkles-count="5"
         class="md:text-5xl text-3xl font-bold text-[#755dcd]"
@@ -20,36 +20,38 @@
         <label
           for="name"
           class="ml-2 font-carterOne w-full text-sm font-medium text-gray-700 dark:text-gray-200"
-          >Name</label
         >
+          {{ $t("contact.name") }}
+        </label>
         <IInput
           v-model="contact.name"
           type="text"
           id="name"
-          placeholder="Enter your name"
+          :placeholder="$t('contact.namePlaceholder')"
           container-class="w-full mb-3"
         ></IInput>
         <label
           for="email"
           class="ml-2 font-carterOne w-full text-sm font-medium text-gray-700 dark:text-gray-200 mt-2"
-          >Email</label
         >
+          {{ $t("contact.name") }}
+        </label>
         <IInput
           v-model="contact.email"
           type="email"
           id="email"
-          placeholder="Enter your email"
+          :placeholder="$t('contact.emailPlaceholder')"
           container-class="w-full mb-3"
         ></IInput>
         <label
           for="message"
           class="ml-2 font-carterOne w-full text-sm font-medium text-gray-700 dark:text-gray-200 mt-2"
-          >Message
+          >{{ $t("contact.message") }}
         </label>
         <TextareaInput
           v-model="contact.message"
           id="message"
-          placeholder="Enter your message"
+          :placeholder="$t('contact.messagePlaceholder')"
           container-class="w-full mb-3"
         ></TextareaInput>
         <div class="flex items-center justify-center w-full mt-4">
@@ -58,7 +60,7 @@
             :disabled="loading"
             class="font-carterOne"
           >
-            {{ loading ? "Loading..." : "Submit" }}
+            {{ loading ? "Loading..." : `${$t("contact.send")}` }}
           </RainbowButton>
         </div>
       </form>

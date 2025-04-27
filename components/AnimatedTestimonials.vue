@@ -5,49 +5,51 @@
     <div class="relative grid grid-cols-1 gap-20 md:grid-cols-5 lg:grid-cols-3">
       <div class="flex items-center justify-center lg:col-span-1 md:col-span-2">
         <div class="relative h-80 w-full">
-            <AnimatePresence>
-            <Motion
-              v-for="(testimonial, index) in props.testimonials"
-              :key="testimonial.image"
-              as="div"
-              :initial="{
-                opacity: 0,
-                scale: 0.9,
-                z: -100,
-                rotate: randomRotateY(),
-              }"
-              :animate="{
-                opacity: isActive(index) ? 1 : 0.7,
-                scale: isActive(index) ? 1 : 0.95,
-                z: isActive(index) ? 0 : -100,
-                rotate: isActive(index) ? 0 : randomRotateY(),
-                zIndex: isActive(index) ? 40 : testimonials.length + 2 - index,
-                y: isActive(index) ? [0, -80, 0] : 0,
-              }"
-              :exit="{
-                opacity: 0,
-                scale: 0.9,
-                z: 100,
-                rotate: randomRotateY(),
-              }"
-              :transition="{
-                duration: 0.4,
-                ease: 'easeInOut',
-              }"
-              class="absolute inset-0 origin-bottom flex items-center justify-center"
-            >
-              <NuxtImg
-                :src="testimonial.image"
-                :alt="testimonial.name"
-                :sizes="'sm:300px md:500px'"
-                :draggable="false"
-                class="w-[90%] h-[90%] rounded-3xl object-cover object-center"
-              />
-            </Motion>
-          </AnimatePresence>
+          <!-- <AnimatePresence> -->
+          <Motion
+            v-for="(testimonial, index) in props.testimonials"
+            :key="testimonial.image"
+            as="div"
+            :initial="{
+              opacity: 0,
+              scale: 0.9,
+              z: -100,
+              rotate: randomRotateY(),
+            }"
+            :animate="{
+              opacity: isActive(index) ? 1 : 0.7,
+              scale: isActive(index) ? 1 : 0.95,
+              z: isActive(index) ? 0 : -100,
+              rotate: isActive(index) ? 0 : randomRotateY(),
+              zIndex: isActive(index) ? 40 : testimonials.length + 2 - index,
+              y: isActive(index) ? [0, -80, 0] : 0,
+            }"
+            :exit="{
+              opacity: 0,
+              scale: 0.9,
+              z: 100,
+              rotate: randomRotateY(),
+            }"
+            :transition="{
+              duration: 0.4,
+              ease: 'easeInOut',
+            }"
+            class="absolute inset-0 origin-bottom flex items-center justify-center"
+          >
+            <NuxtImg
+              :src="testimonial.image"
+              :alt="testimonial.name"
+              :sizes="'sm:300px md:500px'"
+              :draggable="false"
+              class="w-[90%] h-[90%] rounded-3xl object-cover object-center"
+            />
+          </Motion>
+          <!-- </AnimatePresence> -->
         </div>
       </div>
-      <div class="flex flex-col justify-between py-4 lg:col-span-2 md:col-span-3">
+      <div
+        class="flex flex-col justify-between py-4 lg:col-span-2 md:col-span-3"
+      >
         <Motion
           :key="active"
           as="div"

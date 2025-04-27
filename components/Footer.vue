@@ -2,18 +2,22 @@
   <footer class="bg-slate-900 text-white py-4 relative">
     <Gradient />
     <div class="container mx-auto text-center text-md px-3">
-      <div class="flex items-center justify-center md:gap-5 gap-3 my-8">
+      <div
+        class="flex flex-col items-center justify-center md:gap-5 gap-3 my-8"
+      >
         <nuxt-img
           src="/logo/planet_code_full.jpeg"
           format="webp"
-          :srcset="`/logo/planet_code_full.jpeg 480w, /logo/planet_code_full.jpeg 800w`"
-          sizes="(max-width: 600px) 480px, 800px"
+          :srcset="`/logo/planet_code_full.jpeg 50w, /logo/planet_code_full.jpeg 100w`"
+          sizes="(max-width: 600px) 100px, 200px"
           alt="hero-background"
-          class="w-16 h-16 mb-2 rounded-md"
+          width="45"
+          height="45"
+          class="mb-2 rounded-md"
         />
-        <div>
-          <p class="font-mono text-[0.85rem] mb-1 italic">
-            Providing reliable software solutions
+        <div class="flex flex-col items-center justify-center gap-4">
+          <p class="font-mono text-[0.85rem]">
+            {{ $t("footer.title") }}
           </p>
           <div class="flex justify-center space-x-4">
             <Icon name="uil:facebook" class="w-6 h-6" />

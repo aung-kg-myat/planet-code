@@ -1,22 +1,55 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import "/node_modules/flag-icons/css/flag-icons.min.css";
+
+const { t, locales, setLocale } = useI18n();
+const cookieLocale = useCookieLocale();
+
+const selectedLocale = ref({
+  code: cookieLocale.value,
+  icon: cookieLocale.value === "mm" ? "fi fi-mm fis" : "fi fi-gb fis",
+});
+const localesWithIcons = locales.value.map((locale) => {
+  let icon;
+  switch (locale.code) {
+    case "en":
+      icon = "fi fi-gb fis";
+      break;
+    case "mm":
+      icon = "fi fi-mm fis";
+      break;
+    default:
+      icon = "fi fi-mm fis"; // Default icon
+  }
+
+  return {
+    ...locale,
+    icon,
+  };
+});
 
 const isMenuOpen = ref(false);
 const isMounted = ref(false);
 
-const links = [
-  { label: "Home", to: "#home" },
-  { label: "Services", to: "#services" },
-  { label: "About", to: "#about" },
-  { label: "Projects", to: "#projects" },
-  { label: "Testimonials", to: "#testimonials" },
-  { label: "Contact", to: "#contact" },
-];
+const links = computed(() => [
+  { label: t("navbar.home"), to: "#home" },
+  { label: t("navbar.services"), to: "#services" },
+  { label: t("navbar.about"), to: "#about" },
+  { label: t("navbar.projects"), to: "#projects" },
+  { label: t("navbar.testimonials"), to: "#testimonials" },
+  { label: t("navbar.contact"), to: "#contact" },
+]);
 
 const route = useRoute();
 const isActive = (path: string) => route.hash === path;
 
-// Set mounted state when component is ready
+const changeLocale = (newLocale: any) => {
+  setLocale(newLocale.value);
+  selectedLocale.value = {
+    code: newLocale.value,
+    icon: newLocale.icon,
+  };
+};
+
 onMounted(() => {
   isMounted.value = true;
 });
@@ -27,68 +60,121 @@ onMounted(() => {
     v-if="isMounted"
     class="bg-slate-600/80 shadow-sm sticky top-0 backdrop-blur-md z-50 font-mono py-1"
   >
-    <UContainer class="flex items-center justify-between">
+    <UContainer class="">
       <!-- Logo -->
-      <Transition name="fade-down" appear :style="{ '--delay': `${0.6}s` }">
-        <NuxtLink to="/" v-if="isMounted">
-          <nuxt-img
-            src="/logo/planet_code.png"
-            format="webp"
-            :srcset="`logo/planet_code.png 480w, logo/planet_code.png 800w`"
-            sizes="(max-width: 600px) 480px, 800px"
-            alt="logo"
-            class="w-16 h-16"
-          />
-        </NuxtLink>
-      </Transition>
+      <div class="flex items-center justify-between">
+        <Transition name="fade-down" appear :style="{ '--delay': `${0.6}s` }">
+          <NuxtLink to="/" v-if="isMounted">
+            <nuxt-img
+              src="/logo/planet_code.png"
+              format="webp"
+              :srcset="`logo/planet_code.png 480w, logo/planet_code.png 800w`"
+              sizes="(max-width: 600px) 480px, 800px"
+              alt="logo"
+              class="w-16 h-16"
+            />
+          </NuxtLink>
+        </Transition>
 
-      <!-- Desktop Navigation -->
-      <ClientOnly>
-        <nav class="hidden md:flex space-x-6 items-center justify-center gap-4">
-          <Transition
-            name="fade-down"
-            v-for="(link, index) in links"
-            :key="link.to"
-            appear
-            :css="isMounted"
-            :style="{ '--delay': `${index * 0.4}s` }"
+        <!-- Desktop Navigation -->
+        <ClientOnly>
+          <nav
+            class="hidden md:flex space-x-6 items-center justify-center gap-4"
           >
-            <NuxtLink
-              :to="link.to"
-              class="text-white text-sm"
-              :class="{ '!text-[#755dcd]': isActive(link.to) }"
+            <Transition
+              name="fade-down"
+              v-for="(link, index) in links"
+              :key="link.to"
+              appear
+              :css="isMounted"
+              :style="{ '--delay': `${index * 0.4}s` }"
             >
-              <template v-if="link.label === 'Contact'">
-                <RainbowButton class="font-carterOne">
+              <NuxtLink
+                :to="link.to"
+                class="text-white text-sm"
+                :class="{ '!text-[#755dcd]': isActive(link.to) }"
+              >
+                <template v-if="link.label === 'Contact'">
+                  <RainbowButton class="font-carterOne">
+                    {{ link.label }}
+                  </RainbowButton>
+                </template>
+                <template v-else>
                   {{ link.label }}
-                </RainbowButton>
-              </template>
-              <template v-else>
-                {{ link.label }}
-              </template>
-            </NuxtLink>
+                </template>
+              </NuxtLink>
+            </Transition>
+            <USelectMenu
+              :icon="selectedLocale.icon"
+              @change="changeLocale"
+              :content="{
+                align: 'center',
+                side: 'bottom',
+                sideOffset: 8,
+              }"
+              :options="
+                localesWithIcons.map((locale) => ({
+                  label: locale.code.toUpperCase(),
+                  value: locale.code,
+                  icon: locale.icon,
+                }))
+              "
+              :ui="{
+                trailingIcon:
+                  'group-data-[state=open]:rotate-180 transition-transform duration-200',
+              }"
+              color="secondary"
+              highlight
+              variant="outline"
+              class="w-20"
+            />
+          </nav>
+        </ClientOnly>
+        <!-- Mobile Menu Button -->
+        <div class="flex items-center justify-center gap-3 md:hidden">
+          <Transition name="fade-down" appear :style="{ '--delay': '1s' }">
+            <div>
+              <USelectMenu
+                :icon="selectedLocale.icon"
+                @change="changeLocale"
+                :content="{
+                  align: 'center',
+                  side: 'bottom',
+                  sideOffset: 8,
+                }"
+                :options="
+                  localesWithIcons.map((locale) => ({
+                    label: locale.code.toUpperCase(),
+                    value: locale.code,
+                    icon: locale.icon,
+                  }))
+                "
+                :ui="{
+                  trailingIcon:
+                    'group-data-[state=open]:rotate-180 transition-transform duration-200',
+                }"
+                color="secondary"
+                highlight
+                variant="outline"
+                class="w-20"
+              />
+            </div>
           </Transition>
-        </nav>
-      </ClientOnly>
-
-      <!-- Mobile Menu Button -->
-      <Transition
-        name="fade-down"
-        appear
-        :style="{ '--delay': `${2 * 0.15}s` }"
-      >
-        <button class="md:hidden text-gray-300" @click="isMenuOpen = true">
-          <UIcon name="i-heroicons-bars-3" class="w-6 h-6" />
-        </button>
-      </Transition>
+          <Transition name="fade-down" appear :style="{ '--delay': '1s' }">
+            <button class="text-gray-300" @click="isMenuOpen = true">
+              <UIcon name="i-heroicons-bars-3" class="w-6 h-6" />
+            </button>
+          </Transition>
+        </div>
+      </div>
     </UContainer>
 
     <!-- Mobile Slide-over Menu -->
-    <div class="flex items-end justify-end w-full">
+    <div class="md:hidden flex items-end justify-end w-full">
       <USlideover v-model="isMenuOpen" class="w-[100%] h-full">
         <!-- header -->
         <div
-          class="flex justify-between items-center px-6 py-2 lg:px-8 bg-slate-600/80"
+          class="flex justify-between items-center px-6 py-1 lg:px-8 bg-slate-600/80"
         >
           <Transition
             name="fade-down"

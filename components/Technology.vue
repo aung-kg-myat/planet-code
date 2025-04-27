@@ -1,10 +1,7 @@
 <template>
   <div class="relative">
     <Gradient />
-    <AnimatedLogoCloud
-      :logos
-      title="Innovate your business with technologies like"
-    />
+    <AnimatedLogoCloud :logos :title="$t('technologies.title')" />
   </div>
 </template>
 

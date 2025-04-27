@@ -6,7 +6,7 @@
       data-aos="fade-down"
     >
       <SparklesText
-        text="Meet Our Professionals"
+        :text="$t('team.title')"
         :colors="{ first: '#fff', second: '#FE8BBB' }"
         :sparkles-count="5"
         class="md:text-5xl text-3xl font-bold text-[#755dcd]"

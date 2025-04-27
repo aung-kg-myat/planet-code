@@ -12,8 +12,8 @@
         <Team />
         <Testimonial />
         <Contact />
-        <Footer
-      /></div>
+        <Footer />
+      </div>
     </template>
   </Transition>
 </template>

@@ -18,7 +18,7 @@
       <div v-for="member in members" :key="member.name" data-aos="fade-down">
         <div class="flex flex-col items-center justify-center">
           <GlareCard
-            class="flex flex-col items-center justify-center relative bg-white/10"
+            class="flex flex-col items-center justify-center relative bg-gradient-to-r from-blue-700/40 to-orange-900/40"
           >
             <nuxt-img
               :src="member.image"
@@ -26,7 +26,7 @@
               :srcset="`${member.image} 480w, ${member.image} 800w`"
               sizes="(max-width: 600px) 480px, 800px"
               alt="team-member"
-              class="aspect-[1/1] rounded-t-3xl h-full z-10"
+              class="w-[93%] h-[93%] rounded-t-2xl z-10"
             />
             <div class="z-20 absolute bottom-0 bg-black/80 w-full">
               <h1
@@ -47,7 +47,7 @@
             </div>
           </GlareCard>
           <div
-            class="flex items-center justify-center gap-5 bg-gradient-to-r from-blue-700 to-orange-900 rounded-b-3xl pt-2 w-[300px]"
+            class="flex items-center justify-center gap-5 bg-gradient-to-r from-blue-700/60 to-orange-900/60 rounded-b-3xl pt-2 w-[300px]"
           >
             <nuxt-link
               to="https://www.linkedin.com/in/aung-kaung-myat-a82700222/"
@@ -92,7 +92,7 @@ const members = ref([
     position: "Founder & Software Engineer",
     description:
       "4 years of experience in software development, specializing in web applications development.",
-    image: "/team/akm.jpg",
+    image: "/team/akm.jpeg",
     social: {
       linkedin: "https://www.linkedin.com/in/aung-kaung-myat-a82700222/",
       facebook: "https://www.facebook.com/aung.akm2000",

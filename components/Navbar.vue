@@ -94,7 +94,7 @@ onMounted(() => {
                 class="text-white text-sm"
                 :class="{ '!text-[#755dcd]': isActive(link.to) }"
               >
-                <template v-if="link.label === 'Contact'">
+                <template v-if="link.label === $t('navbar.contact')">
                   <RainbowButton class="font-carterOne">
                     {{ link.label }}
                   </RainbowButton>
@@ -224,7 +224,7 @@ onMounted(() => {
                 }"
                 @click="isMenuOpen = false"
               >
-                <template v-if="link.label === 'Contact'">
+                <template v-if="link.label === $t('navbar.contact')">
                   <RainbowButton class="font-carterOne">
                     {{ link.label }}
                   </RainbowButton>

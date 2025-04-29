@@ -17,43 +17,60 @@
       class="px-5 flex w-full md:w-[40%] m-auto flex-col items-center justify-center gap-2 bg-black my-10"
     >
       <form @submit.prevent="handleSubmit()" class="w-full">
-        <label
-          for="name"
-          class="ml-2 font-carterOne w-full text-sm font-medium text-gray-700 dark:text-gray-200"
-        >
-          {{ $t("contact.name") }}
-        </label>
-        <IInput
-          v-model="contact.name"
-          type="text"
-          id="name"
-          :placeholder="$t('contact.namePlaceholder')"
-          container-class="w-full mb-3"
-        ></IInput>
-        <label
-          for="email"
-          class="ml-2 font-carterOne w-full text-sm font-medium text-gray-700 dark:text-gray-200 mt-2"
-        >
-          {{ $t("contact.name") }}
-        </label>
-        <IInput
-          v-model="contact.email"
-          type="email"
-          id="email"
-          :placeholder="$t('contact.emailPlaceholder')"
-          container-class="w-full mb-3"
-        ></IInput>
-        <label
-          for="message"
-          class="ml-2 font-carterOne w-full text-sm font-medium text-gray-700 dark:text-gray-200 mt-2"
-          >{{ $t("contact.message") }}
-        </label>
-        <TextareaInput
-          v-model="contact.message"
-          id="message"
-          :placeholder="$t('contact.messagePlaceholder')"
-          container-class="w-full mb-3"
-        ></TextareaInput>
+        <div class="flex flex-col items-center justify-center gap-1 w-full">
+          <label
+            for="name"
+            class="ml-2 font-carterOne w-full text-sm font-medium text-gray-700 dark:text-gray-200"
+          >
+            {{ $t("contact.name") }}
+          </label>
+          <NeonBorder :class="'h-[40px]'">
+            <input
+              required
+              v-model="contact.name"
+              type="text"
+              id="name"
+              class="size-full rounded-lg px-4 text-sm"
+              :placeholder="$t('contact.namePlaceholder')"
+            />
+          </NeonBorder>
+        </div>
+
+        <div class="flex flex-col items-center justify-center gap-1 w-full">
+          <label
+            for="email"
+            class="ml-2 font-carterOne w-full text-sm font-medium text-gray-700 dark:text-gray-200 mt-2"
+          >
+            {{ $t("contact.email") }}
+          </label>
+          <NeonBorder :class="'h-[40px]'">
+            <input
+              required
+              v-model="contact.email"
+              type="email"
+              id="email"
+              class="size-full rounded-lg px-4 text-sm"
+              :placeholder="$t('contact.emailPlaceholder')"
+            />
+          </NeonBorder>
+        </div>
+        <div class="flex flex-col items-center justify-center gap-1 w-full">
+          <label
+            for="message"
+            class="ml-2 font-carterOne w-full text-sm font-medium text-gray-700 dark:text-gray-200 mt-2"
+          >
+            {{ $t("contact.message") }}
+          </label>
+          <NeonBorder :class="'h-[100px]'">
+            <textarea
+              required
+              id="message"
+              v-model="contact.message"
+              class="size-full w-full rounded-lg px-4 pt-2 text-sm"
+              :placeholder="$t('contact.messagePlaceholder')"
+            />
+          </NeonBorder>
+        </div>
         <div class="flex items-center justify-center w-full mt-4">
           <RainbowButton
             type="submit"

@@ -180,7 +180,6 @@ onMounted(() => {
                 color="secondary"
                 highlight
                 variant="outline"
-                class="w-20"
               />
             </div>
           </Transition>

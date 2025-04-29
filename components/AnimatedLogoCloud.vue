@@ -3,7 +3,7 @@
     <div class="mx-auto w-full px-4 md:px-8">
       <div
         v-if="props.title"
-        class="text-center text-white font-medium text-muted-foreground font-carterOne text-lg"
+        class="text-center text-white font-medium text-muted-foreground font-carterOne md:text-2xl text-lg"
       >
         <div class="flex items-center justify-center">
           <RadiantText

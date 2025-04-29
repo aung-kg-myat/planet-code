@@ -16,7 +16,7 @@
       class="flex items-center justify-center flex-wrap my-10 max-w-7xl mx-auto w-full gap-10"
     >
       <div v-for="member in members" :key="member.name" data-aos="fade-down">
-        <div class="flex flex-col items-center justify-center">
+        <div class="flex flex-col items-center justify-center group">
           <GlareCard
             class="flex flex-col items-center justify-center relative bg-gradient-to-r from-blue-700/40 to-orange-900/40"
           >
@@ -26,7 +26,7 @@
               :srcset="`${member.image} 480w, ${member.image} 800w`"
               sizes="(max-width: 600px) 480px, 800px"
               alt="team-member"
-              class="w-[93%] h-[93%] rounded-t-2xl z-10"
+              class="w-[93%] h-[93%] rounded-t-2xl z-10 transition-transform duration-500 ease-in-out group-hover:scale-110"
             />
             <div class="z-20 absolute bottom-0 bg-black/80 w-full">
               <h1

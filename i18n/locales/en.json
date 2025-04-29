@@ -81,6 +81,10 @@
     "emailPlaceholder": "Enter your email",
     "messagePlaceholder": "Enter your message"
   },
+  "partner": {
+    "title": "Our Valuable Business Partners",
+    "learnMore": "Learn More"
+  },
   "footer": {
     "title": "Your Partner providing reliable software solutions"
   }

@@ -10,6 +10,7 @@
         <Project />
         <Technology />
         <Team />
+        <Partner />
         <Testimonial />
         <Contact />
         <Footer />

@@ -4,21 +4,43 @@ import "/node_modules/flag-icons/css/flag-icons.min.css";
 const { t, locales, setLocale } = useI18n();
 const cookieLocale = useCookieLocale();
 
-const selectedLocale = ref({
-  code: cookieLocale.value,
-  icon: cookieLocale.value === "mm" ? "fi fi-mm fis" : "fi fi-gb fis",
-});
-const localesWithIcons = locales.value.map((locale) => {
-  let icon;
-  switch (locale.code) {
+const getCookieLocaleCode = computed(() => {
+  let icon = "";
+  switch (cookieLocale.value) {
     case "en":
       icon = "fi fi-gb fis";
       break;
     case "mm":
       icon = "fi fi-mm fis";
       break;
+    case "th":
+      icon = "fi fi-th fis";
+      break;
     default:
-      icon = "fi fi-mm fis"; // Default icon
+      break;
+  }
+
+  return icon;
+});
+
+const selectedLocale = ref({
+  code: cookieLocale.value.toLocaleUpperCase(),
+  icon: getCookieLocaleCode,
+});
+const localesWithIcons = locales.value.map((locale) => {
+  let icon;
+  switch (locale.code.toLocaleLowerCase()) {
+    case "en":
+      icon = "fi fi-gb fis";
+      break;
+    case "mm":
+      icon = "fi fi-mm fis";
+      break;
+    case "th":
+      icon = "fi fi-th fis";
+      break;
+    default:
+      icon = "fi fi-gb fis"; // Default icon
   }
 
   return {
@@ -45,7 +67,7 @@ const isActive = (path: string) => route.hash === path;
 const changeLocale = (newLocale: any) => {
   setLocale(newLocale.value);
   selectedLocale.value = {
-    code: newLocale.value,
+    code: newLocale.value.toLocaleUpperCase(),
     icon: newLocale.icon,
   };
 };
@@ -106,6 +128,7 @@ onMounted(() => {
             </Transition>
             <USelectMenu
               :icon="selectedLocale.icon"
+              v-model="selectedLocale.code"
               @change="changeLocale"
               :content="{
                 align: 'center',
@@ -126,7 +149,7 @@ onMounted(() => {
               color="secondary"
               highlight
               variant="outline"
-              class="w-20"
+              class=""
             />
           </nav>
         </ClientOnly>
@@ -136,6 +159,7 @@ onMounted(() => {
             <div>
               <USelectMenu
                 :icon="selectedLocale.icon"
+                v-model="selectedLocale.code"
                 @change="changeLocale"
                 :content="{
                   align: 'center',

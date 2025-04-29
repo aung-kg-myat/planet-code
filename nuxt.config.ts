@@ -58,6 +58,11 @@ export default defineNuxtConfig({
         name: "မြန်မာ",
         file: "mm.json",
       },
+      {
+        code: "th",
+        name: "Thailand",
+        file: "th.json",
+      },
     ],
     lazy: true,
     langDir: "locales", // Directory where translation files are stored

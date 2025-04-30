@@ -28,7 +28,7 @@
               alt="team-member"
               class="w-[93%] h-[93%] rounded-t-2xl z-10 transition-transform duration-500 ease-in-out group-hover:scale-110"
             />
-            <div class="z-20 absolute bottom-0 bg-black/80 w-full">
+            <div class="z-20 absolute bottom-0 bg-black/70 w-full">
               <h1
                 class="text-lg font-bold text-white text-center font-carterOne"
               >
@@ -50,33 +50,34 @@
             class="flex items-center justify-center gap-5 bg-gradient-to-r from-blue-700/60 to-orange-900/60 rounded-b-3xl pt-2 w-[300px]"
           >
             <nuxt-link
-              to="https://www.linkedin.com/in/aung-kaung-myat-a82700222/"
+              :to="member.social.linkedin"
               target="_blank"
               class="group"
             >
               <UIcon
                 name="i-mdi:linkedin"
-                class="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300"
+                class="w-6 h-6 text-white hover:scale-110 hover:text-white/80 transition-transform duration-300"
               />
             </nuxt-link>
             <nuxt-link
-              to="https://www.facebook.com/aung.akm2000"
+              :to="member.social.facebook"
               target="_blank"
               class="group"
             >
               <UIcon
                 name="i-mdi:facebook-box"
-                class="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300"
+                class="w-6 h-6 text-white hover:scale-110 hover:text-white/80 transition-transform duration-300"
               />
             </nuxt-link>
             <nuxt-link
-              to="https://t.me/aung_kg_myat"
+              :to="member.social.telegram"
               target="_blank"
               class="group"
+              v-if="member.social.telegram !== '#'"
             >
               <UIcon
                 name="i-mdi:telegram"
-                class="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300"
+                class="w-6 h-6 text-white hover:scale-110 hover:text-white/80 transition-transform duration-300"
               />
             </nuxt-link>
           </div>
@@ -109,6 +110,18 @@ const members = ref([
       linkedin: "https://www.linkedin.com/in/eaint-myat-thwe-76898a24a/",
       facebook: "https://www.facebook.com/eaitmyat.thawe",
       telegram: "https://t.me/EMT1249",
+    },
+  },
+  {
+    name: "Thae Thinzar Wai",
+    position: "Project Manager",
+    description:
+      "8 years of experience in software development and management, specializing in agile methodologies.",
+    image: "/team/ma_thae.jpeg",
+    social: {
+      linkedin: "https://www.linkedin.com/in/thae-thae-7162a1a2",
+      facebook: "https://www.facebook.com/thae.wai.9",
+      telegram: "#",
     },
   },
 ]);

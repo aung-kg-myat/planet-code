@@ -149,7 +149,7 @@ onMounted(() => {
               color="secondary"
               highlight
               variant="outline"
-              class=""
+              class="!text-white"
             />
           </nav>
         </ClientOnly>
@@ -273,5 +273,14 @@ onMounted(() => {
 .fade-down-enter-from {
   opacity: 0;
   transform: translateY(-10px);
+}
+
+#headlessui-listbox-button-v-1,
+#headlessui-listbox-button-v-0 {
+  button {
+    span {
+      color: white;
+    }
+  }
 }
 </style>

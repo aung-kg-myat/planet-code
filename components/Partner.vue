@@ -34,7 +34,9 @@
 
               <!-- Content with hover-triggered highlight effect -->
               <div class="relative z-20 p-4 transition-all duration-300">
-                <h2 class="text-left text-lg font-bold font-carterOne">
+                <h2
+                  class="text-left text-lg text-white font-bold font-carterOne"
+                >
                   Orange Ideas Marketing Agency
                 </h2>
                 <div class="space-y-2 mt-6">

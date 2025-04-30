@@ -30,7 +30,7 @@
               v-model="contact.name"
               type="text"
               id="name"
-              class="size-full rounded-lg px-4 text-sm"
+              class="size-full rounded-lg px-4 text-sm bg-[#131212]"
               :placeholder="$t('contact.namePlaceholder')"
             />
           </NeonBorder>
@@ -49,7 +49,7 @@
               v-model="contact.email"
               type="email"
               id="email"
-              class="size-full rounded-lg px-4 text-sm"
+              class="size-full rounded-lg px-4 text-sm bg-[#131212]"
               :placeholder="$t('contact.emailPlaceholder')"
             />
           </NeonBorder>
@@ -66,7 +66,7 @@
               required
               id="message"
               v-model="contact.message"
-              class="size-full w-full rounded-lg px-4 pt-2 text-sm"
+              class="size-full w-full rounded-lg px-4 pt-2 text-sm bg-[#131212]"
               :placeholder="$t('contact.messagePlaceholder')"
             />
           </NeonBorder>

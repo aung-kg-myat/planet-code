@@ -24,14 +24,14 @@
           >
             <iPhone15ProMockup
               src="/images/project/beaver_kombat.PNG"
-              class="size-full max-w-[130px] h-[220px] transition-transform duration-500 ease-in-out group-hover:scale-110"
+              class="size-full max-w-[130px] h-[220px] transition-transform duration-500 ease-in-out group-hover:scale-105"
             />
           </div>
 
           <!-- Content with hover-triggered highlight effect -->
           <div class="relative z-20 p-4 transition-all duration-300">
             <h2
-              class="text-left text-2xl font-bold font-carterOne group-hover:text-[#755dcd] transition-colors"
+              class="text-left text-2xl font-bold text-white font-carterOne group-hover:text-[#755dcd] transition-colors"
             >
               Beaver Kombat
             </h2>
@@ -45,7 +45,7 @@
             </p>
             <div class="space-y-2 mt-6">
               <p
-                class="font-carterOne transition-all group-hover:translate-x-1"
+                class="font-carterOne transition-all group-hover:translate-x-1 text-white"
               >
                 Client -
                 <nuxt-link
@@ -75,7 +75,7 @@
             <SafariMockup
               url="inspira-ui.com"
               src="/images/project/beaver_kombat_web.png"
-              class="size-full h-[220px] transition-transform duration-500 ease-in-out group-hover:scale-110"
+              class="size-full h-[220px] transition-transform duration-500 ease-in-out group-hover:scale-105"
             />
           </div>
           <div class="relative z-20 p-4 transition-all duration-300">
@@ -91,7 +91,7 @@
             </p>
             <div class="space-y-2 mt-6">
               <p
-                class="font-carterOne transition-all group-hover:translate-x-1"
+                class="font-carterOne transition-all text-white group-hover:translate-x-1"
               >
                 Client -
                 <nuxt-link
